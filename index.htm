@@ -58,7 +58,7 @@
     /* Center Box (20% Opacity Black) */
     .subscribe-box {
       background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(4px); /* Optional subtle blur for readability */
+      backdrop-filter: blur(4px);
       padding: 40px 30px;
       border-radius: 12px;
       text-align: center;
@@ -125,6 +125,7 @@
 </head>
 <body>
 
+  <!-- Navigation Header -->
   <header>
     <nav>
       <a href="#blog">Blog</a>
@@ -133,6 +134,7 @@
     </nav>
   </header>
 
+  <!-- Center Subscribe Box -->
   <main>
     <div class="subscribe-box">
       <h1>Subscribe to Find Inner Peace</h1>
@@ -151,9 +153,9 @@
     </div>
   </main>
 
+  <!-- JavaScript to Post Data to Google Sheets -->
   <script>
-    // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRxt4FfGtKdnhYF0z__qubPSCNp3EYbg5yVXjABhEf-QrQzsvuexZqnGWQOnuoYuIttA/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwa-Sms4Ta9iuOlt6UFmiCQaxTxQT5Cx8ay3fwRytXcyzgGNf_Mem_vbzGOi_DdU_Gkng/exec';
 
     const form = document.getElementById('email-form');
     const statusDiv = document.getElementById('form-status');
@@ -164,12 +166,19 @@
       submitBtn.disabled = true;
       submitBtn.innerText = 'Submitting...';
 
+      // Convert form data to URL encoded format for reliable Google Apps Script parsing
+      const formData = new FormData(form);
+      const urlEncoded = new URLSearchParams(formData).toString();
+
       fetch(SCRIPT_URL, {
-  method: 'POST',
-  mode: 'no-cors',
-  body: new FormData(form)
-})
-      .then(response => {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncoded
+      })
+      .then(() => {
         statusDiv.innerText = 'Thank you for subscribing!';
         statusDiv.style.color = '#a3ffb4';
         form.reset();
