@@ -29,7 +29,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: transparent; /* Completely invisible banner */
+      background: transparent;
     }
 
     .logo-link {
@@ -46,7 +46,6 @@
       gap: 15px;
     }
 
-    /* Nav Buttons with Hover Effects */
     .nav-btn {
       color: #ffffff;
       text-decoration: none;
@@ -172,4 +171,91 @@
       transition: background-color 0.2s;
     }
 
-    .
+    .signup-form button:hover {
+      background-color: #e2e2e2;
+    }
+
+    #form-status {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-link">The Healing Fairee</a>
+    <nav>
+      <a href="#blog" class="nav-btn">Blog</a>
+      
+      <div class="dropdown">
+        <a href="#freebies" class="nav-btn">Freebies</a>
+        <div class="dropdown-content">
+          <a href="attachment-workbook.html">Attachment Styles Workbook</a>
+        </div>
+      </div>
+
+      <a href="#about" class="nav-btn">About Me</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="subscribe-box">
+      <h1>Subscribe to Find Inner Peace</h1>
+      <p>Want to receive emails with journaling prompts, workbooks, and information about healing workshops?</p>
+      
+      <form class="signup-form" id="email-form">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Email Address" 
+          required 
+        />
+        <input type="hidden" name="source" value="Landing Page" />
+        <button type="submit" id="submit-btn">Sign Up</button>
+      </form>
+      <div id="form-status"></div>
+    </div>
+  </main>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZpYCmbm8HMrDWLxmPxR61w7UIcCatZX8m4QJHPRXul2dm0ru-qG4NvkD5gasDJz412g/exec';
+
+    const form = document.getElementById('email-form');
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Submitting...';
+
+      const formData = new FormData(form);
+      const urlEncoded = new URLSearchParams(formData).toString();
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncoded
+      })
+      .then(() => {
+        statusDiv.innerText = 'Thank you for subscribing!';
+        statusDiv.style.color = '#a3ffb4';
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Sign Up';
+      })
+      .catch(error => {
+        statusDiv.innerText = 'Something went wrong. Please try again.';
+        statusDiv.style.color = '#ff9e9e';
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Sign Up';
+      });
+    });
+  </script>
+
+</body>
+</html>
