@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Healing Fairee</title>
   <style>
-    /* Reset & General Styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,26 +22,88 @@
       color: #ffffff;
     }
 
-    /* Header Navigation */
+    /* Transparent Navigation Header */
     header {
       width: 100%;
       padding: 20px 40px;
       display: flex;
-      justify-content: flex-end;
-      background: rgba(0, 0, 0, 0.3);
+      justify-content: space-between;
+      align-items: center;
+      background: transparent; /* Completely invisible banner */
     }
 
-    nav a {
+    .logo-link {
       color: #ffffff;
       text-decoration: none;
-      margin-left: 25px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: opacity 0.2s;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     }
 
-    nav a:hover {
-      opacity: 0.8;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Nav Buttons with Hover Effects */
+    .nav-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-btn:hover {
+      background-color: #ffffff;
+      color: #222222;
+      text-shadow: none;
+    }
+
+    /* Dropdown Styling */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #ffffff;
+      min-width: 230px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 8px;
+      z-index: 10;
+    }
+
+    .dropdown-content a {
+      color: #222222;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-shadow: none;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     /* Main Container */
@@ -55,7 +116,6 @@
       width: 100%;
     }
 
-    /* Center Box (20% Opacity Black) */
     .subscribe-box {
       background-color: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(4px);
@@ -80,7 +140,6 @@
       color: #e0e0e0;
     }
 
-    /* Form Fields */
     .signup-form {
       display: flex;
       flex-direction: column;
@@ -113,86 +172,4 @@
       transition: background-color 0.2s;
     }
 
-    .signup-form button:hover {
-      background-color: #e2e2e2;
-    }
-
-    #form-status {
-      margin-top: 15px;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation Header -->
-  <header>
-    <nav>
-      <a href="#blog">Blog</a>
-      <a href="#freebies">Freebies</a>
-      <a href="#about">About Me</a>
-    </nav>
-  </header>
-
-  <!-- Center Subscribe Box -->
-  <main>
-    <div class="subscribe-box">
-      <h1>Subscribe to Find Inner Peace</h1>
-      <p>Want to receive emails with journaling prompts, workbooks, and information about healing workshops?</p>
-      
-      <form class="signup-form" id="email-form">
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="Email Address" 
-          required 
-        />
-        <button type="submit" id="submit-btn">Sign Up</button>
-      </form>
-      <div id="form-status"></div>
-    </div>
-  </main>
-
-  <!-- JavaScript to Post Data to Google Sheets -->
-  <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZpYCmbm8HMrDWLxmPxR61w7UIcCatZX8m4QJHPRXul2dm0ru-qG4NvkD5gasDJz412g/exec';
-
-    const form = document.getElementById('email-form');
-    const statusDiv = document.getElementById('form-status');
-    const submitBtn = document.getElementById('submit-btn');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Submitting...';
-
-      // Convert form data into URL-encoded format (matching your freebie page)
-      const formData = new FormData(form);
-      const urlEncoded = new URLSearchParams(formData).toString();
-
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: urlEncoded
-      })
-      .then(() => {
-        statusDiv.innerText = 'Thank you for subscribing!';
-        statusDiv.style.color = '#a3ffb4';
-        form.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerText = 'Sign Up';
-      })
-      .catch(error => {
-        statusDiv.innerText = 'Something went wrong. Please try again.';
-        statusDiv.style.color = '#ff9e9e';
-        submitBtn.disabled = false;
-        submitBtn.innerText = 'Sign Up';
-      });
-    });
-  </script>
-
-</body>
-</html>
+    .
