@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Download Your Workbook | The Healing Fairee</title>
   <style>
+    /* Custom Font Setup */
+    @font-face {
+      font-family: 'Valley Sans';
+      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,7 +22,7 @@
     }
 
     body {
-      background: url('attachment-bg.jpg') no-repeat center center fixed;
+      background: url('attachment-bg.png') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
       display: flex;
@@ -22,28 +31,32 @@
       color: #ffffff;
     }
 
-   /* Transparent Navigation Header */
-    header {
+    /* Shared Header Layout */
+    header#main-header {
       width: 100%;
       padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
       background: transparent;
     }
 
     .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
       color: #ffffff;
       text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      margin-right: auto;
     }
 
-    nav {
-      display: flex;
+    .main-nav {
+      display: flex !important;
       align-items: center;
       gap: 15px;
+      margin-left: auto;
     }
 
     /* Transparent Black Nav Buttons */
@@ -72,7 +85,6 @@
       display: inline-block;
     }
 
-    /* Invisible bridge to prevent dropdown from disappearing */
     .dropdown::after {
       content: '';
       position: absolute;
@@ -114,6 +126,7 @@
       display: block;
     }
 
+    /* Download Page Layout */
     main {
       flex: 1;
       display: flex;
@@ -147,21 +160,7 @@
 </head>
 <body>
 
-  <header>
-    <a href="index.html" class="logo-link">The Healing Fairee</a>
-    <nav>
-      <a href="index.html#blog" class="nav-btn">Blog</a>
-      
-      <div class="dropdown">
-        <a href="#freebies" class="nav-btn">Freebies</a>
-        <div class="dropdown-content">
-          <a href="attachment-workbook.html">Attachment Styles Workbook</a>
-        </div>
-      </div>
-
-      <a href="index.html#about" class="nav-btn">About Me</a>
-    </nav>
-  </header>
+  <header id="main-header"></header>
 
   <main>
     <div class="download-container">
@@ -169,5 +168,8 @@
     </div>
   </main>
 
-</body>
-</html>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.
