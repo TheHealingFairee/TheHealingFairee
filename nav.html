@@ -1,122 +1,16 @@
-<style>
-  /* Custom Font Definition */
-  @font-face {
-    font-family: 'Valley Sans';
-    src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
-         url('Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-  }
-
-  /* Header Layout */
-  .site-header {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: transparent;
-  }
-
-  /* Valley Sans Title / Logo */
-  .logo-link {
-    font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #ffffff;
-    text-decoration: none;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  }
-
-  /* Navigation & Transparent Black Buttons */
-  .main-nav {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .nav-btn {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 8px 18px;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  }
-
-  .nav-btn:hover {
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-  }
-
-  /* Dropdown Styling */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 12px;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: calc(100% + 6px);
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(6px);
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    z-index: 10;
-    white-space: nowrap;
-  }
-
-  .dropdown-content a {
-    color: #ffffff;
-    padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: background-color 0.2s;
-  }
-
-  .dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-</style>
-
-<header class="site-header">
-  <a href="index.html" class="logo-link">The Healing Fairee</a>
-  <nav class="main-nav">
-    <a href="blog.html" class="nav-btn">Blog</a>
-    
-    <div class="dropdown">
-      <a href="#freebies" class="nav-btn">Freebies ▾</a>
-      <div class="dropdown-content">
-        <a href="attachment-workbook.html">Attachment Styles Workbook</a>
-        <a href="adhd-tool.html">ADHD Ranking Tool</a>
-        <a href="emotion-wheel.html">Accessible Emotion Wheel</a>
-        <a href="budget-spreadsheet.html">Budget Spreadsheet</a>
-      </div>
+<a href="index.html" class="logo-link">The Healing Fairee</a>
+<nav class="main-nav">
+  <a href="blog.html" class="nav-btn">Blog</a>
+  
+  <div class="dropdown">
+    <a href="#freebies" class="nav-btn">Freebies ▾</a>
+    <div class="dropdown-content">
+      <a href="attachment-workbook.html">Attachment Styles Workbook</a>
+      <a href="adhd-tool.html">ADHD Ranking Tool</a>
+      <a href="emotion-wheel.html">Accessible Emotion Wheel</a>
+      <a href="budget-spreadsheet.html">Budget Spreadsheet</a>
     </div>
+  </div>
 
-    <a href="about.html" class="nav-btn">About Me</a>
-  </nav>
-</header>
+  <a href="about.html" class="nav-btn">About Me</a>
+</nav>
