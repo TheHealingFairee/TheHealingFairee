@@ -263,4 +263,69 @@
 
   <div class="modal-overlay" id="email-modal">
     <div class="modal-box">
-      <span class="close-btn"
+      <span class="close-btn" id="close-modal-btn">&times;</span>
+      <h2>Yes, send me my free workbook!</h2>
+      
+      <form class="modal-form" id="workbook-form">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Enter your email to receive your download" 
+          required 
+        />
+        <input type="hidden" name="source" value="Attachment Style Workbook" />
+        <button type="submit" id="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      });
+  </script>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZpYCmbm8HMrDWLxmPxR61w7UIcCatZX8m4QJHPRXul2dm0ru-qG4NvkD5gasDJz412g/exec';
+
+    const modal = document.getElementById('email-modal');
+    const openBtn = document.getElementById('open-modal-btn');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const form = document.getElementById('workbook-form');
+    const submitBtn = document.getElementById('submit-btn');
+
+    openBtn.addEventListener('click', () => modal.style.display = 'flex');
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Submitting...';
+
+      const formData = new FormData(form);
+      const urlEncoded = new URLSearchParams(formData).toString();
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncoded
+      })
+      .then(() => {
+        window.location.href = 'download-attachment-workbook.html';
+      })
+      .catch(() => {
+        window.location.href = 'download-attachment-workbook.html';
+      });
+    });
+  </script>
+
+</body>
+</html>
