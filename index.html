@@ -31,13 +31,14 @@
       color: #ffffff;
     }
 
-    /* Shared Header Layout */
+    /* Shared Header Layout - Forces Left and Right Alignment */
     header#main-header {
       width: 100%;
       padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
       background: transparent;
     }
 
@@ -48,12 +49,14 @@
       color: #ffffff;
       text-decoration: none;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      margin-right: auto; /* Pushes the logo to the far left */
     }
 
     .main-nav {
-      display: flex;
+      display: flex !important;
       align-items: center;
       gap: 15px;
+      margin-left: auto; /* Pushes the nav links to the far right */
     }
 
     /* Transparent Black Nav Buttons */
