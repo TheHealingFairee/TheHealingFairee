@@ -165,9 +165,10 @@
       submitBtn.innerText = 'Submitting...';
 
       fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: new FormData(form)
-      })
+  method: 'POST',
+  mode: 'no-cors',
+  body: new FormData(form)
+})
       .then(response => {
         statusDiv.innerText = 'Thank you for subscribing!';
         statusDiv.style.color = '#a3ffb4';
