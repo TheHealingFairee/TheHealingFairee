@@ -166,7 +166,7 @@
       submitBtn.disabled = true;
       submitBtn.innerText = 'Submitting...';
 
-      // Convert form data to URL encoded format for reliable Google Apps Script parsing
+      // Convert form data into URL-encoded format (matching your freebie page)
       const formData = new FormData(form);
       const urlEncoded = new URLSearchParams(formData).toString();
 
