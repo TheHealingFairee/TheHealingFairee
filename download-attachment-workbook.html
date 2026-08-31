@@ -172,4 +172,9 @@
     fetch('nav.html')
       .then(res => res.text())
       .then(data => {
-        document.
+        document.getElementById('main-header').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
