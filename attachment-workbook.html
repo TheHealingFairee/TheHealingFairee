@@ -36,6 +36,7 @@
       margin-left: 25px;
       font-size: 1.1rem;
       font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     main {
@@ -47,28 +48,27 @@
       width: 100%;
     }
 
-    .content-card {
-      background-color: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(6px);
-      padding: 40px;
-      border-radius: 16px;
+    /* Container without background box */
+    .content-container {
       text-align: center;
       max-width: 650px;
       width: 100%;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      padding: 20px;
     }
 
-    .content-card h1 {
+    .content-container h1 {
       font-size: 2.2rem;
       margin-bottom: 20px;
       line-height: 1.3;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
     }
 
-    .content-card p {
+    .content-container p {
       font-size: 1.05rem;
       line-height: 1.6;
       margin-bottom: 30px;
-      color: #f0f0f0;
+      color: #ffffff;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
     }
 
     .oval-btn {
@@ -81,6 +81,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: transform 0.2s, background-color 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .oval-btn:hover {
@@ -169,7 +170,7 @@
   </header>
 
   <main>
-    <div class="content-card">
+    <div class="content-container">
       <h1>FREE How to Heal Your Attachment Style Workbook</h1>
       <p>I made a free workbook with all the information you need about attachment styles, why they form, and how to heal them! If you want to bring peace back into your relationships and stop suffering from anxiety, feeling unloved, unheard, or suffocated, then your new life is just one click away!</p>
       
