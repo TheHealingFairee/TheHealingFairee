@@ -5,20 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Healing Fairee</title>
   <style>
+    /* Custom Font Setup */
     @font-face {
       font-family: 'Valley Sans';
-      src: url('Valley_Sans font/_wght.ttf') format('truetype');
+      src: url('Valley_Sans%20font/_wght.ttf') format('truetype'),
+           url('Valley_Sans font/_wght.ttf') format('truetype');
       font-weight: 100 900;
       font-style: normal;
-    }
-
-    .logo-link {
-      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #ffffff;
-      text-decoration: none;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     }
 
     * {
@@ -38,7 +31,7 @@
       color: #ffffff;
     }
 
-    /* Transparent Navigation Header Container */
+    /* Shared Navigation Header Container */
     header {
       width: 100%;
       padding: 20px 40px;
@@ -48,13 +41,21 @@
       background: transparent;
     }
 
+    .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
     nav {
       display: flex;
       align-items: center;
       gap: 15px;
     }
 
-    /* Transparent Black Nav Buttons */
     .nav-btn {
       color: #ffffff;
       text-decoration: none;
@@ -74,7 +75,6 @@
       color: #ffffff;
     }
 
-    /* Dropdown Styling */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -121,7 +121,6 @@
       display: block;
     }
 
-    /* Main Container */
     main {
       flex: 1;
       display: flex;
@@ -133,4 +132,132 @@
 
     .subscribe-box {
       background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(4px
+      backdrop-filter: blur(4px);
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 550px;
+      width: 100%;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .subscribe-box h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .subscribe-box p {
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      color: #e0e0e0;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .signup-form input[type="email"] {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      outline: none;
+    }
+
+    .signup-form button {
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      background-color: #ffffff;
+      color: #222222;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .signup-form button:hover {
+      background-color: #e2e2e2;
+    }
+
+    #form-status {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header where nav.html gets injected -->
+  <header id="main-header"></header>
+
+  <main>
+    <div class="subscribe-box">
+      <h1>Subscribe to Find Inner Peace</h1>
+      <p>Want to receive emails with journaling prompts, workbooks, and information about healing workshops?</p>
+      
+      <form class="signup-form" id="email-form">
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="hidden" name="source" value="Landing Page" />
+        <button type="submit" id="submit-btn">Sign Up</button>
+      </form>
+      <div id="form-status"></div>
+    </div>
+  </main>
+
+  <!-- Script 1: Injects nav.html into #main-header -->
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      })
+      .catch(err => console.log('Error loading nav:', err));
+  </script>
+
+  <!-- Script 2: Handles Email Submissions -->
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZpYCmbm8HMrDWLxmPxR61w7UIcCatZX8m4QJHPRXul2dm0ru-qG4NvkD5gasDJz412g/exec';
+
+    const form = document.getElementById('email-form');
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Submitting...';
+
+      const formData = new FormData(form);
+      const urlEncoded = new URLSearchParams(formData).toString();
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: urlEncoded
+      })
+      .then(() => {
+        statusDiv.innerText = 'Thank you for subscribing!';
+        statusDiv.style.color = '#a3ffb4';
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Sign Up';
+      })
+      .catch(() => {
+        statusDiv.innerText = 'Something went wrong. Please try again.';
+        statusDiv.style.color = '#ff9e9e';
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Sign Up';
+      });
+    });
+  </script>
+
+</body>
+</html>
