@@ -17,10 +17,100 @@
       background-size: cover;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       color: #ffffff;
+    }
+
+    /* Transparent Navigation Header */
+    header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    .logo-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-btn:hover {
+      background-color: #ffffff;
+      color: #222222;
+      text-shadow: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #ffffff;
+      min-width: 230px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 8px;
+      z-index: 10;
+    }
+
+    .dropdown-content a {
+      color: #222222;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-shadow: none;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
+      width: 100%;
     }
 
     .download-container {
@@ -47,9 +137,27 @@
 </head>
 <body>
 
-  <div class="download-container">
-    <a href="How to Heal Attachment Styles Workbook.pdf" download class="download-link">Click Here to Download your PDF</a>
-  </div>
+  <header>
+    <a href="index.html" class="logo-link">The Healing Fairee</a>
+    <nav>
+      <a href="index.html#blog" class="nav-btn">Blog</a>
+      
+      <div class="dropdown">
+        <a href="#freebies" class="nav-btn">Freebies ▾</a>
+        <div class="dropdown-content">
+          <a href="attachment-workbook.html">Attachment Styles Workbook</a>
+        </div>
+      </div>
+
+      <a href="index.html#about" class="nav-btn">About Me</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="download-container">
+      <a href="How to Heal Attachment Styles Workbook.pdf" download class="download-link">Click Here to Download your PDF</a>
+    </div>
+  </main>
 
 </body>
 </html>
