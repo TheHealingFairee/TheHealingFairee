@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Healing Fairee</title>
+  <style>
+    /* Reset & General Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    /* Header Navigation */
+    header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-end;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /* Center Box (20% Opacity Black) */
+    .subscribe-box {
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(4px); /* Optional subtle blur for readability */
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 550px;
+      width: 100%;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .subscribe-box h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .subscribe-box p {
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      color: #e0e0e0;
+    }
+
+    /* Form Fields */
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .signup-form input[type="email"] {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      outline: none;
+    }
+
+    .signup-form input[type="email"]::placeholder {
+      color: #888888;
+    }
+
+    .signup-form button {
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      background-color: #ffffff;
+      color: #222222;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .signup-form button:hover {
+      background-color: #e2e2e2;
+    }
+
+    #form-status {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#blog">Blog</a>
+      <a href="#freebies">Freebies</a>
+      <a href="#about">About Me</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="subscribe-box">
+      <h1>Subscribe to Find Inner Peace</h1>
+      <p>Want to receive emails with journaling prompts, workbooks, and information about healing workshops?</p>
+      
+      <form class="signup-form" id="email-form">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Email Address" 
+          required 
+        />
+        <button type="submit" id="submit-btn">Sign Up</button>
+      </form>
+      <div id="form-status"></div>
+    </div>
+  </main>
+
+  <script>
+    // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRxt4FfGtKdnhYF0z__qubPSCNp3EYbg5yVXjABhEf-QrQzsvuexZqnGWQOnuoYuIttA/exec';
+
+    const form = document.getElementById('email-form');
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Submitting...';
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => {
+        statusDiv.innerText = 'Thank you for subscribing!';
+        statusDiv.style.color = '#a3ffb4';
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Sign Up';
+      })
+      .catch(error => {
+        statusDiv.innerText = 'Something went wrong. Please try again.';
+        statusDiv.style.color = '#ff9e9e';
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Sign Up';
+      });
+    });
+  </script>
+
+</body>
+</html>
