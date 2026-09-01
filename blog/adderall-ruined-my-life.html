@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adderall Ruined My Life. — The Healing Fairee</title>
+  <title>How to Exercise with Fibromyalgia and CFS | The Healing Fairee</title>
   <style>
     /* Custom Font Setup */
     @font-face {
       font-family: 'Valley Sans';
-      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('../Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
       font-weight: 100 900;
       font-style: normal;
     }
@@ -21,22 +23,24 @@
     }
 
     body {
-      background: url('../beach.jpg') no-repeat center center fixed;
+      background: url('../beach.jpg') no-repeat center center fixed,
+                  url('beach.jpg') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      color: #ffffff;
+      align-items: center;
+      color: #222222;
     }
 
-    /* Standardized Header Navigation Layout */
+    /* Shared Header Layout */
     header#main-header {
       width: 100%;
       padding: 20px 40px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
       background: transparent;
     }
 
@@ -47,15 +51,17 @@
       color: #ffffff;
       text-decoration: none;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      margin-right: auto;
     }
 
     .main-nav {
-      display: flex;
-      flex-direction: row;
+      display: flex !important;
       align-items: center;
       gap: 15px;
+      margin-left: auto;
     }
 
+    /* Transparent Black Nav Buttons */
     .nav-btn {
       color: #ffffff;
       text-decoration: none;
@@ -75,9 +81,19 @@
       color: #ffffff;
     }
 
+    /* Dropdown Styling - .4 Opacity */
     .dropdown {
       position: relative;
       display: inline-block;
+    }
+
+    .dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 12px;
     }
 
     .dropdown-content {
@@ -112,150 +128,155 @@
       display: block;
     }
 
-    /* Blog Main Card Layout */
-    .main-container {
-      max-width: 900px;
+    /* Main Container - Extra Wide, Solid White Box */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
       width: 100%;
-      margin: 40px auto;
-      padding: 0 20px 60px 20px;
     }
 
-    .blog-card {
+    .article-card {
       background-color: #ffffff;
-      color: #2c2c2c;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-      line-height: 1.7;
+      color: #222222;
+      padding: 55px 65px;
+      border-radius: 12px;
+      max-width: 1200px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      line-height: 1.8;
     }
 
-    .post-title {
-      font-size: 2.4rem;
-      color: #1a1a1a;
-      margin-bottom: 8px;
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #555555;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #000000;
+    }
+
+    .article-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      color: #111111;
       line-height: 1.25;
     }
 
-    .meta-info {
-      font-size: 0.9rem;
+    .article-meta {
+      font-size: 0.95rem;
       color: #666666;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
     }
 
-    .hero-image {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 25px;
-      display: block;
+    .article-content h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      color: #111111;
+      clear: both;
     }
 
-    .blog-content p {
-      margin-bottom: 1.5rem;
+    .article-content p {
       font-size: 1.05rem;
       color: #333333;
+      margin-bottom: 22px;
     }
 
-    .blog-content h2 {
-      font-size: 1.5rem;
-      color: #1a1a1a;
-      margin: 35px 0 15px 0;
+    .article-content em, .article-content i {
+      font-style: italic;
     }
 
-    .float-image-left {
-      float: left;
-      width: 40%;
-      max-width: 320px;
-      margin: 0 20px 15px 0;
+    .article-content strong, .article-content b {
+      font-weight: bold;
+    }
+
+    .article-content a {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    /* First Full Width Image */
+    .hero-img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
       border-radius: 8px;
+      margin-bottom: 30px;
     }
 
-    .float-image-right {
+    /* Floated Side Images with Text Wrapping */
+    .float-right {
       float: right;
-      width: 45%;
-      max-width: 360px;
-      margin: 0 0 15px 20px;
+      width: 42%;
+      max-width: 420px;
+      margin: 10px 0 20px 30px;
       border-radius: 8px;
     }
 
-    .image-container {
-      margin-bottom: 15px;
+    .float-left {
+      float: left;
+      width: 42%;
+      max-width: 420px;
+      margin: 10px 30px 20px 0;
+      border-radius: 8px;
     }
 
-    .caption {
-      font-size: 0.8rem;
-      color: #777777;
-      margin-top: 5px;
-      line-height: 1.4;
-    }
-
-    .caption a {
-      color: #b75aff;
-      text-decoration: underline;
-    }
-
-    .blog-content a {
-      color: #b75aff;
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    .blog-content a:hover {
-      color: #8c26d4;
-    }
-
-    /* Clearfix for floating images */
-    .clearfix::after {
-      content: "";
+    .callout-quote {
+      text-align: center;
+      font-size: 1.25rem;
+      font-style: italic;
+      margin: 35px 0;
+      padding: 22px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      border-left: 4px solid #222222;
+      color: #222222;
       clear: both;
-      display: table;
     }
 
+    /* Responsive adjustments for mobile */
     @media (max-width: 768px) {
-      header#main-header {
-        padding: 15px 20px;
+      .article-card {
+        padding: 30px 20px;
       }
-      .blog-card {
-        padding: 25px 20px;
-      }
-      .float-image-left,
-      .float-image-right {
+
+      .float-right, .float-left {
         float: none;
         width: 100%;
         max-width: 100%;
-        margin: 15px 0;
+        margin: 20px 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <header id="main-header">
-    <a href="../index.html" class="logo-link">The Healing Fairee</a>
-    <nav class="main-nav">
-      <a href="../blog.html" class="nav-btn">Blog</a>
-      <div class="dropdown">
-        <a href="#" class="nav-btn">Freebies ▾</a>
-        <div class="dropdown-content">
-          <a href="./attachment-styles-workbook.html">Attachment Styles Workbook</a>
-          <a href="./adhd-ranking-tool.html">ADHD Ranking Tool</a>
-          <a href="./how-to-adult-without-adhd-meds.html">Adulting Without Meds</a>
-          <a href="./accessible-emotion-wheel.html">Accessible Emotion Wheel</a>
-          <a href="./budget-spreadsheet.html">Budget Spreadsheet</a>
-        </div>
-      </div>
-      <a href="../about-me.html" class="nav-btn">About Me</a>
-    </nav>
-  </header>
+  <!-- Shared Header Placeholder -->
+  <header id="main-header"></header>
 
-  <main class="main-container">
-    <article class="blog-card clearfix">
-      <h1 class="post-title">Adderall Ruined My Life.</h1>
-      <div class="meta-info">Apr 19 • Written By Eliana Camargo</div>
+  <main>
+    <div class="article-card">
+      <a href="../blog.html" class="back-link">← Back to Blog</a>
+      
+      <h1 class="article-title"> Adderall Ruined My Life.</h1>
+      <div class="article-meta">Published April 19, 2025 • Written by Eliana Camargo</div>
+
+      <div class="article-content">
 
       <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/954c0775-d4ee-46e2-b87c-d928d836f4b3/Photoshop+2.jpg" alt="Adderall Ruined My Life Banner" class="hero-image">
-
-      <div class="blog-content">
         <p><strong>Adderall ruined my life.</strong></p>
         <p>Usually when people say that it’s because they got addicted and started taking higher and higher doses to get high, but that’s not what happened to me. I only ever took my very low prescribed dose, exactly as directed by my doctor, and it temporarily <em>disabled</em> me. And this is that story. Disclaimer: I don’t think this will happen to most people, and I know some people swear by Adderall improving their quality of life. So I’m not here to fear monger! I’m just telling my story and educate people about a possible consequence of taking strong stimulants.</p>
 
@@ -326,7 +347,29 @@
 
         <p>So this was the story of how my prescribed dose of adderall ruined my life. Not only because of the horrible fibromyalgia flare up, but I can also see how it changed my personality while on it. In my opinion, it's better to create a life and a job that works for your brain, than to try to change your brain to work for your job. Which if you’re curious about, I make content all about health and wellbeing so feel free to check out my other blog posts, or my <a href="https://www.youtube.com/@thehealingfairee" target="_blank">YouTube channel TheHealingFairee</a>. Thanks for sticking around to the end of my story :) I’m wishing you all the health!</p>
       </div>
-    </article>
+       </div>
+    </div>
   </main>
+
+  <!-- Script: Fetch Header Links -->
+  <script>
+    fetch('../nav.html?v=1')
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.text();
+      })
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      })
+      .catch(() => {
+        fetch('nav.html?v=1')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('main-header').innerHTML = data;
+          });
+      });
+  </script>
+
 </body>
 </html>
+
