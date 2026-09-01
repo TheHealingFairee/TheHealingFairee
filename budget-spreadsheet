@@ -138,7 +138,7 @@
       .then(data => { document.getElementById('main-header').innerHTML = data; });
 
     // Form Submission & Redirect Logic
-    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzZpYCmbm8HMrDWLxmPxR61w7UIcCatZX8m4QJHPRXul2dm0ru-qG4NvkD5gasDJz412g/exec';
     const form = document.getElementById('optin-form');
     const submitBtn = document.getElementById('submit-btn');
     const statusMsg = document.getElementById('status-msg');
