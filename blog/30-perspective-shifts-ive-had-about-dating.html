@@ -238,6 +238,32 @@
       border-radius: 8px;
     }
 
+    /* Side-by-Side Video Layout */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 35px 0;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .caption {
       font-size: 0.8rem;
       color: #777777;
@@ -245,35 +271,6 @@
       margin-bottom: 15px;
       line-height: 1.4;
       text-align: center;
-    }
-
-    /* Author Footer Profile */
-    .author-profile {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .author-avatar {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .author-info h3 {
-      font-size: 1.1rem;
-      color: #111111;
-      margin-bottom: 4px;
-    }
-
-    .author-info a {
-      color: #b75aff;
-      text-decoration: none;
-      font-weight: 600;
     }
 
     /* Navigation Pagination */
@@ -409,9 +406,19 @@
 
         <p><strong>30. Charisma is not important</strong> - I used to only want to get involved with someone if they were charismatic, because it’s really attractive. But I’ve learned that in the long term it literally matters so little if someone is charismatic. Charisma is not what makes a relationship good, the actual relationship you have with eachother or how you treat eachother is what matters. Not if they’re sparkly in the first meeting. And Charisma can often accompany red flags! Not that it’s a red flag in and of itself, but players are often charismatic. So more often than not in my experience the guys that I’ve met who are charismatic were bad news. And even myself, when I was younger I used to use my charisma for evil when I had zero desire for a long term relationship but was just looking for fun, so I know this phenomenon very well. Luckily I’m not in that unevolved era anymore. And so charisma on a first date is no longer something that I care about. It’s a nice bonus, but it’s not necessary by any means and has zero impact on how good a relationship is in the longterm.</p>
 
-        <p style="text-align: center; font-style: italic;">Watch this topic in video form: Coming soon!</p>
-      </div>
+        <p style="text-align: center; font-style: italic;">Watch this topic in video form: </p>
 
+
+      <div class="video-grid">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/YHoqNqOaVd0" title="15 lessons that changed the way I view love" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/JaXM6E2sTgs" title="15 lessons I've learned in a decade of dating - Part 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+              </div>
 
       <nav class="post-pagination">
         <a href="how-to-strengthen-intuition.html" class="prev-post">← How to Strengthen Your Intuition</a>
