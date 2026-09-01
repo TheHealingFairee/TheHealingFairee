@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Exercise with Fibromyalgia and CFS | The Healing Fairee</title>
+  <title>About Me | The Healing Fairee</title>
   <style>
     /* Custom Font Setup */
     @font-face {
       font-family: 'Valley Sans';
-      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
-           url('../Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype'),
-           url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype');
       font-weight: 100 900;
       font-style: normal;
     }
@@ -23,8 +22,7 @@
     }
 
     body {
-      background: url('../beach.jpg') no-repeat center center fixed,
-                  url('beach.jpg') no-repeat center center fixed;
+      background: url('beach.jpg') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
       display: flex;
@@ -128,7 +126,7 @@
       display: block;
     }
 
-    /* Blog Article Container */
+    /* Main Container */
     main {
       flex: 1;
       display: flex;
@@ -138,7 +136,7 @@
       width: 100%;
     }
 
-    .article-card {
+    .about-card {
       background-color: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(6px);
       padding: 45px 35px;
@@ -146,88 +144,98 @@
       max-width: 850px;
       width: 100%;
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-bottom: 20px;
+    /* Header Profile Layout */
+    .profile-header {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .profile-photo {
+      width: 260px;
+      height: auto;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
+    }
+
+    .profile-intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .profile-intro h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .profile-intro p {
+      margin-bottom: 14px;
+    }
+
+    /* Section Headings with Top Border Lines */
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 18px;
+      padding-top: 25px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    p {
+      font-size: 1rem;
+      color: #f0f0f0;
+      margin-bottom: 15px;
+    }
+
+    /* Contact Links Section */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .contact-list li {
+      font-size: 1rem;
+    }
+
+    .contact-list a {
       color: #ffffff;
       text-decoration: underline;
       font-weight: 600;
       transition: opacity 0.2s;
     }
 
-    .back-link:hover {
+    .contact-list a:hover {
       opacity: 0.8;
     }
 
-    .article-title {
-      font-size: 2.6rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-      line-height: 1.3;
-    }
+    /* Mobile Responsive Layout */
+    @media (max-width: 650px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
 
-    .article-meta {
-      font-size: 0.95rem;
-      color: #d1d1d1;
-      margin-bottom: 30px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 15px;
-    }
-
-    .article-content h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-top: 35px;
-      margin-bottom: 15px;
-      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-      color: #ffffff;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 6px;
-    }
-
-    .article-content p {
-      font-size: 1.05rem;
-      color: #f0f0f0;
-      margin-bottom: 22px;
-      white-space: pre-line;
-    }
-
-    .article-content em, .article-content i {
-      font-style: italic;
-    }
-
-    .article-content strong, .article-content b {
-      font-weight: bold;
-    }
-
-    .article-content a {
-      color: #a3ffb4;
-      text-decoration: underline;
-    }
-
-    .article-content img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin: 25px 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      display: block;
-    }
-
-    .callout-quote {
-      text-align: center;
-      font-size: 1.25rem;
-      font-style: italic;
-      margin: 30px 0;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      border-left: 4px solid #ffffff;
+      .profile-photo {
+        width: 100%;
+        max-width: 280px;
+      }
     }
   </style>
 </head>
@@ -237,124 +245,47 @@
   <header id="main-header"></header>
 
   <main>
-    <div class="article-card">
-      <a href="../blog.html" class="back-link">← Back to Blog</a>
-      
-      <h1 class="article-title">How to Exercise with Fibromyalgia and CFS</h1>
-      <div class="article-meta">Published May 4 • Written by Eliana Camargo</div>
-
-      <div class="article-content">
-        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/083c9056-1e0e-49cf-9fb3-58d59738f030/Updog+no+redness+2.jpg" alt="How to Exercise with Fibromyalgia and CFS" />
-
-        <p>Exercise is one of the best things you can do to improve fibromyalgia or chronic fatigue syndrome (CFS), but it can also be incredibly difficult! I spent years attempting to get into a regular exercise routine, but would constantly feel like a failure and fall off the wagon as a result. I was made to seem by doctors and society that I was just “lazy”. Luckily after years of research, trial and error, and diligence I’ve finally figured out what works for me and what doesn’t. It’s really more about <em>how</em> you exercise rather than what exercises you do. I hope this advice will be useful for someone else who’s struggling, but remember, I’m not a doctor. I’m just a girl with fibromyalgia and CFS and this is just what has worked for me.</p>
-
-        <h3>What’s the difference between working out with fibromyalgia vs CFS?</h3>
-        <p>Fibromyalgia and CFS are 99% the same diagnoses, but fibromyalgia leans towards having more chronic pain, while CFS leans towards having more chronic fatigue. One of the main differences with CFS is it typically makes exercise a LOT more difficult because over exertion can lead to flaring up, which then makes you unable to exercise for a long time. The tips below should help prevent this from happening!</p>
-
-        <h3>If you can’t even fathom working out</h3>
-        <p>If the state of your health makes exercise sound like a pipe dream, focus on balancing the other pillars of your life first. <em>It’s okay to spend this chapter of your life not exercising!</em> I give you permission, in fact it could be the healthiest thing for you right now in order to heal.</p>
-
-        <p>Before I was ever capable of exercise I had to fix my diet first. For me this looked like eating mostly whole foods, and eliminating gluten and rice. It ends up I’m allergic to the folic acid that’s fortified in wheat and rice products! When I eat foods with folic acid my muscles become weak, I have to sleep 12+ hours a day, and I feel like I have the flu 24/7/365. No matter how consistent I was or how much effort I put in, building muscle was impossible. It was only after fixing my diet that I was capable of slowly beginning to workout and maintain results. The healthiest diet will look different for everyone, so experiment and find out what works for you.</p>
-
-        <p>Another huge pillar you may need to resolve before being healthy enough to exercise is fixing your emotional/mental health (especially for those with CFS!). It’s not talked about often enough that one of the biggest causes of fibromyalgia and CFS is trauma or PTSD stored in our subconscious mind. Seek help from a therapist that specializes in trauma, or a hypnotherapist in order to heal this component of your life.</p>
-
-        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/e7cebec8-1617-42d8-a98a-dad894abed43/unsplash-image-730OPl8S9W4.jpg" alt="Relaxing and healing" />
-
-        <p>If you’re not able to do any exercise, using a sauna can be a great addition to your health regimen. Regular sauna use is proven to tons of health benefits, including increasing the average lifespan! And studies show that saunas decreases pain, fatigue, and insomnia in those with fibromyalgia and CFS <a href="https://www.sciencedirect.com/science/article/abs/pii/S1744388110000599" target="_blank">(1)</a> <a href="https://www.healthyliving.gr/wp-content/uploads/2018/08/Cardiovascular-and-Other-Health-Benefits-of-Sauna-Bathing-A-Review-of-the-Evidence.pdf" target="_blank">(2)</a> <a href="https://www.jstage.jst.go.jp/article/onki/78/3/78_285/_pdf" target="_blank">(3)</a>. It’s a great alternative to cardio if you’re not capable of doing any, because saunas make you sweat and get your heartrate up without movement. Sweating also detoxifies the body, which can be helpful for reducing fibromyalgia symptoms caused by toxins.</p>
-
-        <p>There may be other pillars of your life that need to be balanced before you can physically be capable of working out. It’s okay to exercise minimally or not at all while you regain your health. Exercise can end up being more of a hindrance than a benefit to your overall well-being if you’re not in the right state to do so.</p>
-
-        <h3>Mindset</h3>
-        <p>The biggest lesson when learning to exercise with chronic illness is not what exercise routine to have, but rather what mindset to have. The world is oversaturated with exercise advice that is geared towards able-bodied people, but that does not apply to you! Even if you seem able-bodied to the outside world, even if you have many good days and still live a relatively normal life, when it comes to physical exertion your body is unique. So <em>THROW OUT</em> everything you’ve previously learned about exercising! You’re going to adopt a completely new mindset that will eliminate the anguish and frustration that comes with attempting to regularly exercise.</p>
-
-        <p>Most workout advice tells us to “Go, go, go! Push past the pain until you can’t go anymore!” and that’s the worst advice for people with fibromyalgia and especially CFS. Often times we’re told that if we ease into exercise gently then it’s completely pointless and we may as well do nothing at all. Or if you take a break for a week then you’ll lose all of your progress. None of these are true, and so you need to forget these tips! These may be useful mindsets for the able-bodied person who is focused on getting fit as fast as possible, but that’s not you. So anytime you read things online, watch videos, or talk to people about exercise, remind yourself that most likely the advice doesn’t apply to you. Of course some of it can, but remember that you’re unique and so you have unique rules when it comes to exercise. <em>You have to adopt a new mindset and accept that you’re not going to be able to reach the same fitness goals in the same timeframe as able bodied people.</em></p>
-
-        <p>Instead of exercising to reach a certain fitness goal, or to look a certain way, you should exercise to feel good and be healthy. Forget about trying to improve or increase the difficulty of every exercise. You’re going to fluctuate in health and energy a lot, so expecting to constantly improve will only result in disappointment. <em>Your new goal is to focus more on consistency rather than improvement.</em> As long as you got a workout in, even if it was less intense than last week, you were successful!</p>
-
-        <div class="callout-quote">
-          Your worth is not defined by your achievements or how capable you are. You’re allowed to take it slow!
+    <div class="about-card">
+      <div class="profile-header">
+        <img src="About-Me-Photo.jpg" alt="Eliana Camargo" class="profile-photo" />
+        <div class="profile-intro">
+          <h1>Hi!</h1>
+          <p>I’m Eliana Camargo, also known as The Healing Fairee. My greatest passion is anything related to health and well-being, and helping others grow into the best version of themself!</p>
+          <p>I was diagnosed with both ADHD and Fibromyalgia at 23 years old. But I was later diagnosed with ME/CFS which I feel is a much more accurate representation of the health issues I deal with. I’ve been on a journey of healing myself, both from my physical ailments and mental health battles. I used to be suicidally depressed, but have majorly overcome that by going gluten free!</p>
+          <p>I've also dealt with a fearful avoidant (leaning anxious) attachment style, which I have come a long way in healing and becoming much more securely attached.</p>
         </div>
-
-        <p>This is going to be a long journey before you see the benefits of the exercise, or before your symptoms start to decrease, so go in with that expectation. It’s like getting a college degree, you’re here for the long haul.</p>
-
-        <p>One of the mindset shifts you need to adopt is to stay optimistic. Your mind is a powerful creator, and if you constantly focus on what you’re not capable of doing, how decrepit your body is, or have thoughts like “I’ll never get better!” you’ll attract more of that into your life. Instead, focus on what you are capable of achieving, and tell yourself “I am getting healthier and healthier everyday” or “I will be healed of these symptoms”. Of course I don’t condone toxic positivity, if you are really struggling it’s okay to validate those emotions. But if you work to shift your dominant thoughts to be positive you will manifest greater health through the Law of Attraction. Manifesting health doesn’t mean that you delusionally believe that you are 100% better and then you will wake up healed. It means the universe will bring you one step closer everyday to creating that as a reality for yourself, by bringing you in contact with doctors/teachers/information about how to heal, and through taking inspired action to balance all of the pillars of your life.</p>
-
-        <h3>Create a Routine</h3>
-        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1651710877237-78P7TED6FO77ATFIKAB9/unsplash-image-WI30grRfBnE.jpg" alt="Habit log journal" />
-
-        <p>If you don’t exercise at all then you should start extremely slowly, as going too intense can cause a flare-up. If you’re very unwell or unfit, start with going for short walks. Overtime as your health improves, increase the duration of them.</p>
-
-        <p>If you’re well enough to start exercising, schedule just 1 or 2 days a week to do something low impact. Over the next few months you can increase the amount of days you exercise until you’re at 5 or 6 days a week. Schedule a time during the day, and set an alarm on your phone if you need to. This way you can expect that every Wednesday at 5pm it’s time to exercise for 20 minutes.</p>
-
-        <p>Some days you will feel well enough to get a good workout in, and some days you’ll feel like crap. Listen to your body and take it easy! But the key is: despite feeling weaker than usual you should still get dressed in your gym clothes and do a workout. Just make it a scaled back easier version. Instead of doing yoga, just stretch. Instead of jogging, just walk, etc. It’s important to still get some movement in, but it’s also important to honor your body and not push it. Even if all you can do is rest in child’s pose, it’s still important to get into your gym clothes and go to where you exercise because this enforces the habit in your brain. If you skip the workout entirely every time you feel like crap, so much time can pass that you get out of the routine. Then when you’re feeling better you’ll forget that you should have exercised that day! This makes it way too easy for weeks to pass by doing no exercise, and will create a downward spiral of your symptoms becoming worse, making it even harder to get back into exercising. So if you feel like crap, make sure to still get some movement in at your scheduled exercise time, but allow yourself to scale it back! This is normal and part of the process. Though you may be surprised when you begin that you’re capable of doing even more than expected.</p>
-
-        <p>However, if you’re feeling extremely unwell and the thought of changing your clothes or going for a walk sounds like death, honor that too. There may be periods of time were you can’t keep up with the routine whatsoever, so let yourself take a break. Over time you’ll become in tune with your body and learn when you just need to just scale it back vs when you need to take a break entirely.</p>
-
-        <h3>Exercise Tips</h3>
-        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/ca99b21b-1b6f-4e57-91d5-67592975cccb/Heart+Rate+2.jpg" alt="Heart rate guide" />
-
-        <p>Strength training exercises can actually decrease the joint and muscle pains that come with fibromyalgia. But at the same time the pain we experience can make exercising very difficult. Expect that you are most likely going to experience some level of pain that you need to push past in the beginning. This is where you need to become discerning and be in tune with how much pain is acceptable to push past, and when you need to give your body a break. If the pain is exceeding about a 4/10 on the pain threshold, scale it back.</p>
-
-        <p>Exercising with CFS is a lot trickier than with Fibromyalgia as overexertion can very easily lead to flaring up. You may find yourself stuck at the same level of fitness for months before seeing any kind of improvement. Find the threshold of difficulty that is within your capability and don’t try to push much further. It’s more important to balance the other pillars of your life until your CFS improves, and then you can try increasing the difficulty of your exercise. Despite what anyone tells you, it’s okay to do the same workout over and over! And some days even that exercise will be too much. Over time you’ll get better at being in tune with your body and sensing when you’re about to push your body to the point of flaring up, and immediately stopping or scale it back before this happens. It’s a very unique feeling, like your life force energy or chi is rapidly draining out of your body, or like a robot on low battery. Just like learning to drive a stick shift car, it takes a while to figure out when the car is about to stall and how to save it before it does. It will take trial and error to get it right, which unfortunately means you may cause flare-ups in this process. Be patient with yourself and give yourself grace when this happens! Let yourself rest for as long as you need to before you get back into your routine.</p>
-
-        <p>When doing cardio I find it a lot more beneficial to focus on my heartrate rather than how fast/how far/how long I’ve gone. I typically run on a treadmill or use a stationary bike at the gym, both of which have heartrate monitors. You can also use a smartwatch or Fitbit to calculate your heartrate, but you don’t need any fancy tools at all! To manually check your heartrate set a timer for 10 seconds, check your pulse and count how many beats there are, and then multiply it by 6. I like to keep my heartrate between 65-80% of its max while I exercise because I find if I go above 80% it’s very easy to flare up my CFS. So rather than focusing on a fitness goal I just keep my heartrate up for however long I plan to do cardio, and take walking breaks when needed. In the beginning I could only jog for 5 minutes, but now I regularly do around 25 minutes. Don’t get discouraged when the common advice is to do 30 minutes of cardio 5 days a week. Remember that only applies to able bodied people, and doing 10 minutes once a week is more than enough! Over time you’ll slowly be able to scale it up.</p>
-
-        <p>I recommend exercising indoors for a couple reasons. First because people with fibromyalgia can have a hard time regulating body temperature, and overheating will make it much more difficult to do an effective exercise without feeling dizzy. If you exercise indoors it’s easier to control the temperature with AC or a fan. And second, it’s sometimes difficult to gauge how much energy you have when going for a run or bike ride. You may get to your furthest point and then realize your life force energy is quickly draining from you and you need to stop in order to prevent a CFS flare up. This can make it incredibly difficult to get back home, but if you exercise on a treadmill or stationary bike, you can stop whenever you need and you’re always the same number of few steps away from leaving the gym!</p>
-
-        <p>Going along with the point of regulating body temperature, make sure to wear gym clothes that keep you cool! If you exercise in a big cotton T-shirt you’re likely going to overheat and feel like crap. I notice a huge difference in how I feel exercising when I wear materials made for the gym, and a tank top or sports bra versus a T-shirt. Don’t be afraid to be the skimpiest person in the gym, you’re just hot! (pun not intended 😉)</p>
-
-        <h3>Types of exercise to do</h3>
-        <p>When trying to decide the actual types of exercise you should do it’s helpful to think of the types of exercises old people do.</p>
-
-        <p><em>Yoga</em><br>
-        If you don’t know where to begin, I highly recommend yoga. In my opinion it is the perfect workout, and not just the chronically ill but for everyone! It combines strength training, stretching, balance, mindfulness, becoming in tune with your body and breath, and you can even turn it into cardio if you do a fast paced vinyasa flow. All around it’s perfect. It’s also super easy to modify a practice to include easier or harder variations of the poses depending on your fitness level or how you’re feeling that day. Yoga classes are also super accommodating to those with health issues as they encourage you to listen to your body and take it easy if needed!</p>
-
-        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1651723066299-SGYLX1CC3EDNJRGX7Q7S/unsplash-image-CINnJJ1itog.jpg" alt="Yoga practice" />
-
-        <p><em>Pool Aerobics</em><br>
-        If you have a lot of joint pain then exercising in a pool can be a great option. I don’t have access to a heated pool so my doctor prescribed me a pass to a local indoor heated pool, which you can only get into with a doctor’s prescription. They have physical therapists that help tailor a workout to what your body is capable of. If you don’t have access to a heated pool, ask your doctor if there’s something like this where you live!</p>
-
-        <p><em>Strength training</em><br>
-        Strength training is incredibly important to keep away joint and muscle pain. Calisthenics (body weight exercises) are a great easy way to start. Pilates is another great version of calisthenics to try. Once you gain some strength you can work up to using weights as well.</p>
-
-        <p><em>Cardio</em><br>
-        Cardio helps you have more energy during the day in the long term. But it may take months before you start seeing any result, as you will typically have less energy directly after an exercise. I enjoy bicycling (either outdoors or on a stationary bike in the gym) and running (typically on a treadmill). As mentioned above, the key is to focus on keeping your heartrate around 65-80% of its max, and exercise indoors with A/C or a fan.</p>
-
-        <p>Stay away from intense fitness classes like CrossFit. Even cycling classes can be too intense, as the instructor typically pushes everyone to keep going past the burn, rather than encouraging you to listen to what your body needs. If you want to go to a fitness class I recommend starting with yoga. Eventually as you get fitter you may be capable of more intense classes, but you probably don’t want to attempt it for a while.</p>
-
-        <h3>Emotional Trauma</h3>
-        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1651710090700-CFHZYD1KHRIBW6FLHDLQ/unsplash-image-I8gQVrDcXzY.jpg" alt="Emotional Healing" />
-
-        <p>A huge aspect of exercising with fibromyalgia or CFS is emotional trauma, yet so few people seem to talk about it. Emotional trauma has two implications here, the first being that subconsciously stored trauma can worsen fibromyalgia or CFS, making it more difficult to exercise (or just live a normal healthy life!) And the second being, we can have emotional trauma about the topic of exercise, which can come up when we attempt to do so. I’ll be covering the second topic in this article.</p>
-
-        <p>Living in a society that expects everyone to be able to exercise like an able bodied person can cause a lot of emotional turmoil for anyone who’s chronically ill. You could have memories from PE/Gym class where you were expected to push past your body’s limits just to get a good grade, with no understanding from the teacher. You could have memories of trying to explain to friends or family that you’re not capable of physically exerting yourself like they can, only to be called weak or lazy. Even daily tasks like doing chores or going to the grocery store can feel like trying to scale a mountain! These moments can be incredibly distressing, and make us feel unseen, unheard, misunderstood, different, outcast, defective, etc.</p>
-
-        <p>When we attempt to exercise it can sometimes trigger these memories and cause a lot of sorrow and grief. It can also cause a flare up of our symptoms. This means we’re in the need of emotional healing, and your inner child needs love in order to overcome this! When you feel any negative emotions come up from these memories, don’t try to push them away by telling yourself it was in the past and that you need to move on. This is the absolute worst thing you can do, and pushes the trauma further into your subconscious mind where it will continue to haunt you. Instead, validate your emotions and let yourself take a break. If it feels right, hug yourself and tell your inner child that you’re here for them now. Ask your inner child exactly how they’re feeling, and what they need. Tell yourself (either in your head or out loud) anything your inner child needs to hear, like that you’re never going to overexert yourself ever again. Tell yourself that even if others don’t understand your needs, you do, and will go out of your way to ensure they’re met. You’re not lazy, you’re ill, and it’s okay to take life slower. You will always advocate for yourself to get the accommodations that you need. You will always make it through whatever obstacles come your way. Even though your body has caused you a lot of pain, you still love your body and will let it move at a slower pace through life, etc. This is such a crucial step in healing fibromyalgia and being capable for doing more intense workouts in the future. Don’t overlook the power of validating your emotions and really spending the time to tell yourself the positive things you need to hear! Emotional healing won’t happen in one day, and you will need to repeat this process multiple times as emotions come up, but over time the frequency of these emotional moments will reduce and cease.</p>
-
-        <p>Make sure you never punish yourself during times where you’re flaring up, or when you’re not physically capable of doing the things you wish you could do. Exercising with chronic illness can be very emotionally taxing, and the worst thing you can do is beat yourself up for it. Validate your frustration, but also send your body love instead of anger or hatred. Your body is a part of you, so feeling that you’re cursed for being stuck in a chronically ill body causes fragmentation of the self. This creates a shadow in your subconscious where a part of you is cast aside as “bad”, which will make it impossible to fully heal! No matter what happens with your body, always give your symptoms love rather than anger. It helps to observe your body as though you are a separate observer, rather than be tied to the egoic identity of the self. Remember the symptoms you are experiencing is a temporary sensation passing through you, and it’s okay to slow your life down to accommodate them. View your symptoms purely as sensations or feedback, rather than pain or suffering.</p>
-
-        <h3>Conclusion</h3>
-        <p>As time goes on and you balance all of the pillars of your health, you'll look back and see just how far you've come! I remember when I was hardly able to do half of a 20 minute yoga video, when I can now do advanced yoga for 75 minutes. I’ve had periods of my life where I was hardly able to walk for 10 minutes, but now I can run for multiple miles. I'm living proof that it is possible to get your life back despite having fibromyalgia and CFS, and you are no exception! It may be a long journey and there will be ups and downs, but you will be capable of healing your body. Know it to be true and it will manifest! Good luck ❤️</p>
       </div>
+
+      <p>Nothing excites me more than help others heal themselves, using the knowledge I’ve accrued over the years! And so I make content on YouTube on all topics related to well-being, and host this website to give away free guides for you to download!</p>
+      
+      <p>I'm a big believer that healing should never be behind a paywall, and so I will always provide resources on how to heal for free. However, if you want to work directly with me in workshops, I may offer them in the future :) Subscribe to my email list if you'd like to be the first to learn about those! The workshops will cost a small fee, but all of the information I will be guiding you through can be found for free on my YouTube channel. They will just be for those who want their hand held along the way, if that's something that calls out to you!</p>
+
+      <h2>Contact Me</h2>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:ContactElianaCamargo@gmail.com">ContactElianaCamargo@gmail.com</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/thehealingfairee/" target="_blank" rel="noopener">@TheHealingFairee</a></li>
+        <li><strong>YouTube:</strong> <a href="http://www.youtube.com/channel/UCpEavshmZCHN8oTLmLtBJdQ" target="_blank" rel="noopener">The Healing Fairee</a></li>
+        <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@thehealingfairee" target="_blank" rel="noopener">@TheHealingFairee</a></li>
+        <li><strong>(Retired) Relationship Advice YouTube Channel:</strong> <a href="https://www.youtube.com/@LibraLoveLounge" target="_blank" rel="noopener">Libra Love Lounge</a></li>
+      </ul>
+
+      <h2>Why the name "The Healing Fairee"?</h2>
+      <p>Well, I was given the nickname "fairy" my freshman year of high school when my theatre teacher said I looked like a fairy. My friend Sammy thought it was cute so she started calling me that, and before I knew it my entire theatre class called me fairy! I took theatre every year, and as the years progressed some of my classmates didn't know that fairy wasn't my real name! When I'd go to add them on Facebook (a sign of my age..) they didn't know who I was. So I decided to add Fairy to my name.</p>
+      
+      <p>Except Facebook decided that "Fairy" wasn't a real name and it wouldn't let me! I'm pretty sure some hippie out there has actually named their child Fairy.. wild choice on Facebook's part to block the name. To circumvent this I tried every variation and spelling of Fairy until I found one it would accept, which is how I landed on Fairee.</p>
+      
+      <p>Once I graduated high school and drifted away from my theatre friends, not many people called me Fairee anymore. Until 2018-2019 when I started doing improv weekly, which is such a love of mine! Improv was always my favorite part of theatre, and so I decided since I was back in a theatre related environment, I would introduce myself as Fairee again :)</p>
+      
+      <p>I then started my main YouTube channel in 2020, and decided The Healing Fairee would be the perfect name for a channel based around healing, well-being, and spirituality. I've actually gone back and forth over the years if I should rename the channel to Eliana Camargo to be taken a little more seriously, since The Healing Fairee has a juvenile connotation (and hard to spell if I'm just telling someone the name out loud!) We'll see if I ever make the change. But that's the story behind my username!</p>
     </div>
   </main>
 
-  <!-- Script: Fetch Header Links (Checks both relative paths) -->
+  <!-- Script: Fetch Header Links -->
   <script>
-    fetch('../nav.html')
-      .then(res => {
-        if (!res.ok) throw new Error();
-        return res.text();
-      })
+    fetch('nav.html?v=1')
+      .then(res => res.text())
       .then(data => {
         document.getElementById('main-header').innerHTML = data;
-      })
-      .catch(() => {
-        fetch('nav.html')
-          .then(res => res.text())
-          .then(data => {
-            document.getElementById('main-header').innerHTML = data;
-          });
       });
   </script>
 
