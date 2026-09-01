@@ -1,257 +1,417 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Strengthen Your Intuition — The Healing Fairee</title>
-    
-    <!-- Open Graph Metadata -->
-    <meta property="og:site_name" content="The Healing Fairee">
-    <meta property="og:title" content="How to Strengthen Your Intuition — The Healing Fairee">
-    <meta property="og:type" content="article">
-    <meta property="og:description" content="Everyone is intuitive. But Intuition is like a muscle, you can grow it by exercising it. With practice you’ll be able to easily discern what’s your intuitive voice, and have it speak to you more often.">
-    <meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/fabf13e4-daf8-4b3b-8845-24a00e89112d/Screenshot+2025-02-09+202655.png">
-    
-    <!-- Stylesheets & Fonts -->
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        @font-face {
-            font-family: 'Valley Sans';
-            src: url('../fonts/ValleySans.woff2') format('woff2'),
-                 url('../fonts/ValleySans.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Strengthen Your Intuition — The Healing Fairee</title>
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:site_name" content="The Healing Fairee">
+  <meta property="og:title" content="How to Strengthen Your Intuition — The Healing Fairee">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Everyone is intuitive. But Intuition is like a muscle, you can grow it by exercising it. With practice you’ll be able to easily discern what’s your intuitive voice, and have it speak to you more often.">
+  <meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/fabf13e4-daf8-4b3b-8845-24a00e89112d/Screenshot+2025-02-09+202655.png">
 
-        body {
-            background-color: #0f0f12;
-            color: #e0e0e0;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-        }
+  <style>
+    /* Custom Font Setup */
+    @font-face {
+      font-family: 'Valley Sans';
+      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+    }
 
-        h1, h2, h3, h4 {
-            font-family: 'Valley Sans', 'Poppins', sans-serif;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .blog-container {
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
+    body {
+      background: url('../beach.jpg') no-repeat center center fixed,
+                  url('beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffffff;
+    }
 
-        .blog-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    /* Shared Header Layout */
+    header#main-header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      background: transparent;
+    }
 
-        .blog-title {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+    /* Logo Styling */
+    .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #ffffff !important;
+      text-decoration: none;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      margin-right: auto;
+    }
 
-        .blog-meta {
-            font-size: 0.9rem;
-            color: #a0a0a0;
-        }
+    /* Navigation Links Container */
+    .main-nav {
+      display: flex !important;
+      align-items: center;
+      gap: 15px;
+      margin-left: auto;
+    }
 
-        .featured-image, .content-image {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            margin: 20px 0;
-            object-fit: cover;
-        }
+    /* Rounded Pill Button Style */
+    .nav-btn {
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
 
-        .image-container-right {
-            float: right;
-            max-width: 320px;
-            margin: 10px 0 20px 25px;
-        }
+    .nav-btn:hover {
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #ffffff !important;
+    }
 
-        .image-container-left {
-            float: left;
-            max-width: 280px;
-            margin: 10px 25px 20px 0;
-        }
+    /* Dropdown Menu Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-        .content-image-floated {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+    .dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 12px;
+    }
 
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 10;
+      white-space: nowrap;
+    }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            margin: 35px 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
+    .dropdown-content a {
+      color: #ffffff !important;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
 
-        a {
-            color: #b592ff;
-            text-decoration: underline;
-            transition: color 0.2s ease;
-        }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-        a:hover {
-            color: #d4c2ff;
-        }
+    /* Main Container & Article Card */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px 20px 60px 20px;
+      width: 100%;
+    }
 
-        .sources-section {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
-            color: #b0b0b0;
-            word-break: break-all;
-        }
+    .article-card {
+      background-color: #ffffff;
+      color: #2c2c2c;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 1200px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      line-height: 1.7;
+    }
 
-        .post-pagination {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #b75aff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
 
-        @media (max-width: 768px) {
-            .blog-container {
-                margin: 20px 15px;
-                padding: 20px;
-            }
+    .back-link:hover {
+      text-decoration: underline;
+    }
 
-            .image-container-right, .image-container-left {
-                float: none;
-                max-width: 100%;
-                margin: 20px 0;
-            }
+    .article-title {
+      font-size: 2.4rem;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      line-height: 1.25;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+    }
 
-            .blog-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666666;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
+    }
+
+    /* Main Banner / Top Image */
+    .hero-image {
+      display: block;
+      max-width: 550px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 25px auto;
+      border-radius: 8px;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: #333333;
+    }
+
+    .article-content h2, .article-content h3 {
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      margin: 35px 0 15px 0;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+    }
+
+    .article-content a {
+      color: #b75aff;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: #8c26d4;
+    }
+
+    /* Floating Images inside post */
+    .float-left {
+      float: left;
+      width: 40%;
+      max-width: 320px;
+      margin: 0 20px 15px 0;
+      border-radius: 8px;
+    }
+
+    .float-right {
+      float: right;
+      width: 45%;
+      max-width: 360px;
+      margin: 0 0 15px 20px;
+      border-radius: 8px;
+    }
+
+    /* Video Embed Container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 35px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Sources Section */
+    .sources-section {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.85rem;
+      color: #666666;
+      word-break: break-all;
+    }
+
+    .sources-section p {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* Navigation Pagination */
+    .post-pagination {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding-top: 15px;
+      font-weight: 600;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .post-pagination a {
+      color: #b75aff;
+      text-decoration: none;
+    }
+
+    .post-pagination a:hover {
+      text-decoration: underline;
+    }
+
+    /* Clearfix helper */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    @media (max-width: 768px) {
+      header#main-header {
+        padding: 15px 20px;
+      }
+      .article-card {
+        padding: 25px 20px;
+      }
+      .float-left,
+      .float-right {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 15px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Shared Site Navigation Header -->
-    <div id="nav-placeholder"></div>
-    <script>
-        fetch('../nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-    </script>
+  <!-- Shared Header Placeholder -->
+  <header id="main-header"></header>
 
-    <main class="blog-container">
-        <header class="blog-header">
-            <h1 class="blog-title">How to Strengthen Your Intuition</h1>
-            <div class="blog-meta">
-                <span>February 10, 2025</span> • <span>Written By Eliana Camargo</span>
-            </div>
-        </header>
+  <main>
+    <article class="article-card clearfix">
+      <a href="../blog.html" class="back-link">← Back to Blog</a>
+      
+      <h1 class="article-title">How to Strengthen Your Intuition</h1>
+      <div class="article-meta">Published February 10, 2025 • Written by Eliana Camargo</div>
 
-        <img class="featured-image" src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/fabf13e4-daf8-4b3b-8845-24a00e89112d/Screenshot+2025-02-09+202655.png" alt="A mystical photo of a woman">
+      <div class="article-content">
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/fabf13e4-daf8-4b3b-8845-24a00e89112d/Screenshot+2025-02-09+202655.png" alt="A mystical photo of a woman" class="hero-image">
 
-        <article class="blog-content clearfix">
-            <p>Everyone is intuitive. But Intuition is like a muscle, you can grow it by exercising it. With practice you’ll be able to easily discern what’s your intuitive voice, and have it speak to you more often. So how do we do this?</p>
-            
-            <p>Lets first define exactly what I mean by intuition. <strong>Intuition is your gut instinct</strong>, like when you know that a situation or person is good or bad for you, without any external signs to give you a hint. Everyone knows that gut instinct is very real, but intuition goes even deeper than that! Intuition can also tie us to the knowledge of the universe. Whether that means communication with God or Angels, or if it means tapping into the oneness that is everything to gain insight about life, anyone can guidance from the universe. Intuition lets us gain glimpses of life from a birds eye view of the timeline of your past and future, like seeing your life from a higher perspective. It’s not just <em>special fortune tellers</em> who have this ability, everyone is a little bit psychic! Have you ever thought about someone, and 1 minute later they call you? How’d you know they were about to call? Or have a feeling you should check your email, and the message you’d been waiting for arrived exactly then? That’s your intuition, aka your 6th sense, or your 3rd eye.</p>
+        <p>Everyone is intuitive. But Intuition is like a muscle, you can grow it by exercising it. With practice you’ll be able to easily discern what’s your intuitive voice, and have it speak to you more often. So how do we do this?</p>
+        
+        <p>Lets first define exactly what I mean by intuition. <strong>Intuition is your gut instinct</strong>, like when you know that a situation or person is good or bad for you, without any external signs to give you a hint. Everyone knows that gut instinct is very real, but intuition goes even deeper than that! Intuition can also tie us to the knowledge of the universe. Whether that means communication with God or Angels, or if it means tapping into the oneness that is everything to gain insight about life, anyone can guidance from the universe. Intuition lets us gain glimpses of life from a birds eye view of the timeline of your past and future, like seeing your life from a higher perspective. It’s not just <em>special fortune tellers</em> who have this ability, everyone is a little bit psychic! Have you ever thought about someone, and 1 minute later they call you? How’d you know they were about to call? Or have a feeling you should check your email, and the message you’d been waiting for arrived exactly then? That’s your intuition, aka your 6th sense, or your 3rd eye.</p>
 
-            <h3>First lets start with how to differentiate intuition from fear.</h3>
+        <h3>First lets start with how to differentiate intuition from fear.</h3>
 
-            <div class="image-container-right">
-                <img class="content-image-floated" src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/51ec768b-705e-45e6-9433-516a31c0bbd1/einstein+quote.jpg" alt="Albert Einstein quote on intuition">
-            </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/51ec768b-705e-45e6-9433-516a31c0bbd1/einstein+quote.jpg" alt="Albert Einstein quote on intuition" class="float-right">
 
-            <p>Our gut instinct will often tell us when a situation is bad for us, but sometimes what feels like intuition is just fear. If you’ve never learned how to distinguish between the two, it can make you lack trust in your gut. But just like you weren’t born knowing how to read, you can also be taught the difference between fear and intuition. It’s actually pretty simple, intuition will always feel peaceful, whereas fear comes up as an emotion. Even if the intuitive thought you get is about something bad, it’ll always come up peaceful, but then once your mind wraps around it you might start to feel panic afterwards. Whereas fear will immediately come up as panic.</p>
+        <p>Our gut instinct will often tell us when a situation is bad for us, but sometimes what feels like intuition is just fear. If you’ve never learned how to distinguish between the two, it can make you lack trust in your gut. But just like you weren’t born knowing how to read, you can also be taught the difference between fear and intuition. It’s actually pretty simple, intuition will always feel peaceful, whereas fear comes up as an emotion. Even if the intuitive thought you get is about something bad, it’ll always come up peaceful, but then once your mind wraps around it you might start to feel panic afterwards. Whereas fear will immediately come up as panic.</p>
 
-            <p>Fear will make you feel agitated, anxious, or erratic. It brings uncertainty, makes you reminisce on past experiences, or catastrophize about the future. You’ll feel tense, your mind might race, and you could feel a heavy weight in your chest or stomach. Intuition, on the other hand, will feel like a sense of inner clarity, or a gentle pull in a particular direction. It’s a unique deep inner knowing. There's no urgency or anxiety attached to it. Instead, it’s steady, like a calm presence is whispering in your ear, guiding you from within. Not screaming in your ear like fear does.</p>
+        <p>Fear will make you feel agitated, anxious, or erratic. It brings uncertainty, makes you reminisce on past experiences, or catastrophize about the future. You’ll feel tense, your mind might race, and you could feel a heavy weight in your chest or stomach. Intuition, on the other hand, will feel like a sense of inner clarity, or a gentle pull in a particular direction. It’s a unique deep inner knowing. There's no urgency or anxiety attached to it. Instead, it’s steady, like a calm presence is whispering in your ear, guiding you from within. Not screaming in your ear like fear does.</p>
 
-            <p>For example, maybe you’re walking down the street and you feel a nudge that you should cross the street, for no particular reason. And then right as you cross, a tree falls where you would have been standing. That quiet knowing was your intuition.</p>
+        <p>For example, maybe you’re walking down the street and you feel a nudge that you should cross the street, for no particular reason. And then right as you cross, a tree falls where you would have been standing. That quiet knowing was your intuition.</p>
 
-            <h3>So now that you know the difference between fear and intuition, how can you strengthen it so that you hear it more often and more clearly?</h3>
+        <h3>So now that you know the difference between fear and intuition, how can you strengthen it so that you hear it more often and more clearly?</h3>
 
-            <div class="image-container-left">
-                <img class="content-image-floated" src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/5d022ecb-aba4-4151-a5ab-32e1e5cec185/unsplash-image-p-v1DBkTrgo.jpg" alt="A woman meditating cross legged">
-            </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/5d022ecb-aba4-4151-a5ab-32e1e5cec185/unsplash-image-p-v1DBkTrgo.jpg" alt="A woman meditating cross legged" class="float-left">
 
-            <p><strong>First:</strong> Meditate daily so you can tune into your inner voice. If you suck at meditating, I made a 5 minute beginner’s guided meditation that you can listen to <a href="https://youtu.be/kNk49VwNHZU" target="_blank">right here</a>! But the point of meditation is to become the observer of your thoughts, instead of getting carried down a rabbit hole of your thoughts. Meditation teaches you to come back to the present moment over and over. In order to hear your intuition you need a quiet mind, because intuition isn’t logic or thought based, it’s an inner knowing. It comes to you when you’ve cleared your mind and are in the present moment. The more you meditate, the better you’ll be at quieting your mind, so meditating daily is essential if you want to strengthen your intuition.</p>
+        <p><strong>First:</strong> Meditate daily so you can tune into your inner voice. If you suck at meditating, I made a 5 minute beginner’s guided meditation that you can listen to <a href="https://youtu.be/kNk49VwNHZU" target="_blank">right here</a>! But the point of meditation is to become the observer of your thoughts, instead of getting carried down a rabbit hole of your thoughts. Meditation teaches you to come back to the present moment over and over. In order to hear your intuition you need a quiet mind, because intuition isn’t logic or thought based, it’s an inner knowing. It comes to you when you’ve cleared your mind and are in the present moment. The more you meditate, the better you’ll be at quieting your mind, so meditating daily is essential if you want to strengthen your intuition.</p>
 
-            <p><strong>Second:</strong> When you get an intuitive hit, follow it! If you ignore your intuition it’ll learn that you don’t listen anyway, so why speak up? But the more you start following your intuition, the more it learns that it’s safe to be heard.</p>
+        <p><strong>Second:</strong> When you get an intuitive hit, follow it! If you ignore your intuition it’ll learn that you don’t listen anyway, so why speak up? But the more you start following your intuition, the more it learns that it’s safe to be heard.</p>
 
-            <p><strong>Third:</strong> Write down your intuitive thoughts and check to see if they come true. Then in the future when you feel something similar you’ll be able to tell if it’s your intuition or not! Over time, this strengthens your trust in your gut instincts and helps you recognize when your intuition really is speaking.</p>
+        <p><strong>Third:</strong> Write down your intuitive thoughts and check to see if they come true. Then in the future when you feel something similar you’ll be able to tell if it’s your intuition or not! Over time, this strengthens your trust in your gut instincts and helps you recognize when your intuition really is speaking.</p>
 
-            <p><strong>Fourth:</strong> If you’re not sure if something is your intuition, ask for guidance. Clear your mind and don’t search for the answer, just feel into it. If the answer is yes, typically you’ll feel light and expansive. And if it’s no you’ll feel compression or heavy.</p>
+        <p><strong>Fourth:</strong> If you’re not sure if something is your intuition, ask for guidance. Clear your mind and don’t search for the answer, just feel into it. If the answer is yes, typically you’ll feel light and expansive. And if it’s no you’ll feel compression or heavy.</p>
 
-            <p><strong>Fifth:</strong> The more in tune you are with your emotions, the more intuitive you’ll be. That’s because the more aware you are of how your emotions feel, where they come from, and how they show up physically in your body, the easier it is to distinguish between the calm guidance of intuition from the nervous energy of fear.</p>
+        <p><strong>Fifth:</strong> The more in tune you are with your emotions, the more intuitive you’ll be. That’s because the more aware you are of how your emotions feel, where they come from, and how they show up physically in your body, the easier it is to distinguish between the calm guidance of intuition from the nervous energy of fear.</p>
 
-            <p><strong>Sixth:</strong> Get a fluoride water filter. I know this is a weird one, but studies show that fluoridated drinking water calcifies the pineal gland in the brain.¹ ² And the pineal gland is the 3rd eye.³ Fun fact, the pineal gland actually has structures that resemble photoreceptors like we have in our eyes, which may be why we can see visions or energy!⁴ But if your 3rd eye is calcified, that won’t happen so easily. In America, and a few other countries, our government adds fluoride to the drinking water because it’s supposed to help prevent cavities. But we now have fluoride in our toothpaste which makes having it in our water no longer necessary.⁵ And in fact some studies suggest it can even be bad for our health, such as competing for iodine absorption which leads to thyroid issues!⁶ Luckily one of the very few good things that the Trump administration is talking about doing is removing fluoride from our water so maybe this won’t be an issue anymore. But while it is, get a water filter that can remove fluoride. Most popular water filters like <u>Brita can’t do this</u> because fluoride is a very small molecule and it takes a special water filter to be able to remove it.⁷ I use <a href="https://clearlyfiltered.com/collections/shop-all" target="_blank">Clearly Filtered</a> because it’s one that’s capable of filtering fluoride. (This isn’t sponsored, this is just what I use!)</p>
+        <p><strong>Sixth:</strong> Get a fluoride water filter. I know this is a weird one, but studies show that fluoridated drinking water calcifies the pineal gland in the brain.¹ ² And the pineal gland is the 3rd eye.³ Fun fact, the pineal gland actually has structures that resemble photoreceptors like we have in our eyes, which may be why we can see visions or energy!⁴ But if your 3rd eye is calcified, that won’t happen so easily. In America, and a few other countries, our government adds fluoride to the drinking water because it’s supposed to help prevent cavities. But we now have fluoride in our toothpaste which makes having it in our water no longer necessary.⁵ And in fact some studies suggest it can even be bad for our health, such as competing for iodine absorption which leads to thyroid issues!⁶ Luckily one of the very few good things that the Trump administration is talking about doing is removing fluoride from our water so maybe this won’t be an issue anymore. But while it is, get a water filter that can remove fluoride. Most popular water filters like <u>Brita can’t do this</u> because fluoride is a very small molecule and it takes a special water filter to be able to remove it.⁷ I use <a href="https://clearlyfiltered.com/collections/shop-all" target="_blank">Clearly Filtered</a> because it’s one that’s capable of filtering fluoride. (This isn’t sponsored, this is just what I use!)</p>
 
-            <h3>Other factors that increase intuition:</h3>
+        <h3>Other factors that increase intuition:</h3>
 
-            <div class="image-container-right">
-                <img class="content-image-floated" src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1739161240042-QRKYR5MWC5836GP1PWKO/unsplash-image-DA_tplYgTow.jpg" alt="An ocean at sunset">
-            </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1739161240042-QRKYR5MWC5836GP1PWKO/unsplash-image-DA_tplYgTow.jpg" alt="An ocean at sunset" class="float-right">
 
-            <p>Our intuition is the strongest around the full moon, because the full moon is known to heighten our emotions and in turn our psychic ability. And when our senses are heightened, so is our 6th sense! Our intuition is also strongest when we’re near or in a body of water, because water is a conduit of emotion and metaphysical energy. Intuition is also a feminine energy. But that doesn’t mean only women are intuitive, both men and women have both masculine and feminine energy within us, like yin and yang. So the more you’re tuned into your feminine energy, the more intuitive you’ll be. Which means even men can strengthen their divine feminine energy to tap into their intuition!</p>
+        <p>Our intuition is the strongest around the full moon, because the full moon is known to heighten our emotions and in turn our psychic ability. And when our senses are heightened, so is our 6th sense! Our intuition is also strongest when we’re near or in a body of water, because water is a conduit of emotion and metaphysical energy. Intuition is also a feminine energy. But that doesn’t mean only women are intuitive, both men and women have both masculine and feminine energy within us, like yin and yang. So the more you’re tuned into your feminine energy, the more intuitive you’ll be. Which means even men can strengthen their divine feminine energy to tap into their intuition!</p>
 
-            <p>I know not everyone is going to believe the depth of how woo woo some of this is, I know I wouldn’t have before my spiritual awakening when I used to be very atheist! But these are all things I’ve personally experienced and had proven themselves to me time and time again. So I know this information will find the right person at the right time. :) You’ll only strengthen your intuition when you’re ready to. Are you ready?</p>
+        <p>I know not everyone is going to believe the depth of how woo woo some of this is, I know I wouldn’t have before my spiritual awakening when I used to be very atheist! But these are all things I’ve personally experienced and had proven themselves to me time and time again. So I know this information will find the right person at the right time. :) You’ll only strengthen your intuition when you’re ready to. Are you ready?</p>
 
-            <!-- Embedded YouTube Video -->
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/hxuMFyrxiJ4" title="How to Strengthen Your Intuition" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
+        <!-- Embedded YouTube Video -->
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/hxuMFyrxiJ4" title="How to Strengthen Your Intuition" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
 
-            <!-- Sources Section -->
-            <div class="sources-section">
-                <p><strong>Sources about fluoride:</strong></p>
-                <p>¹ <a href="https://www.mdpi.com/2076-3417/10/8/2885" target="_blank">MDPI Article on Pineal Gland Calcification</a></p>
-                <p>² <a href="https://www.healthline.com/health/decalcify-pineal-gland" target="_blank">Healthline: Decalcify Pineal Gland</a></p>
-                <p>³ <a href="https://my.clevelandclinic.org/health/body/23334-pineal-gland" target="_blank">Cleveland Clinic: Pineal Gland Overview</a></p>
-                <p>⁴ <a href="https://pubmed.ncbi.nlm.nih.gov/11962759/" target="_blank">PubMed: Photoreceptor Structures in Pineal Gland</a></p>
-                <p>⁵ <a href="https://link.springer.com/article/10.1007/s00784-007-0111-6" target="_blank">Springer: Dental Fluoride Research</a></p>
-                <p>⁶ <a href="https://pubmed.ncbi.nlm.nih.gov/30316182/" target="_blank">PubMed: Fluoride and Thyroid Interaction</a></p>
-                <p>⁷ <a href="https://thewaterprofessor.com/blogs/articles/fluoride-water-filter-lab-test-review" target="_blank">The Water Professor: Fluoride Filter Review</a></p>
-            </div>
-        </article>
+        <!-- Sources Section -->
+        <div class="sources-section">
+          <p><strong>Sources about fluoride:</strong></p>
+          <p>¹ <a href="https://www.mdpi.com/2076-3417/10/8/2885" target="_blank">MDPI Article on Pineal Gland Calcification</a></p>
+          <p>² <a href="https://www.healthline.com/health/decalcify-pineal-gland" target="_blank">Healthline: Decalcify Pineal Gland</a></p>
+          <p>³ <a href="https://my.clevelandclinic.org/health/body/23334-pineal-gland" target="_blank">Cleveland Clinic: Pineal Gland Overview</a></p>
+          <p>⁴ <a href="https://pubmed.ncbi.nlm.nih.gov/11962759/" target="_blank">PubMed: Photoreceptor Structures in Pineal Gland</a></p>
+          <p>⁵ <a href="https://link.springer.com/article/10.1007/s00784-007-0111-6" target="_blank">Springer: Dental Fluoride Research</a></p>
+          <p>⁶ <a href="https://pubmed.ncbi.nlm.nih.gov/30316182/" target="_blank">PubMed: Fluoride and Thyroid Interaction</a></p>
+          <p>⁷ <a href="https://thewaterprofessor.com/blogs/articles/fluoride-water-filter-lab-test-review" target="_blank">The Water Professor: Fluoride Filter Review</a></p>
+        </div>
+      </div>
 
-        <!-- Pagination Links -->
-        <nav class="post-pagination">
-            <a href="adderall-ruined-my-life.html">← Adderall Ruined My Life.</a>
-            <a href="30-perspective-shifts-ive-had-about-dating.html">30 Perspective Shifts I’ve Had About Dating →</a>
-        </nav>
-    </main>
+      <!-- Pagination Links -->
+      <nav class="post-pagination">
+        <a href="adderall-ruined-my-life.html">← Adderall Ruined My Life.</a>
+        <a href="30-perspective-shifts-ive-had-about-dating.html">30 Perspective Shifts I’ve Had About Dating →</a>
+      </nav>
+    </article>
+  </main>
+
+  <!-- Script: Fetch Header Links dynamically from nav.html -->
+  <script>
+    fetch('../nav.html?v=1')
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.text();
+      })
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      })
+      .catch(() => {
+        fetch('nav.html?v=1')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('main-header').innerHTML = data;
+          });
+      });
+  </script>
 
 </body>
 </html>
