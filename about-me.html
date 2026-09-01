@@ -79,7 +79,7 @@
       color: #ffffff;
     }
 
-    /* Dropdown Styling - Updated transparency to 0.4 */
+    /* Dropdown Styling - .4 Opacity */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -150,42 +150,47 @@
     /* Header Profile Layout */
     .profile-header {
       display: flex;
-      gap: 30px;
-      align-items: flex-start;
-      margin-bottom: 35px;
+      gap: 35px;
+      align-items: center;
+      margin-bottom: 25px;
     }
 
     .profile-photo {
-      width: 240px;
+      width: 260px;
       height: auto;
-      border-radius: 12px;
+      border-radius: 16px;
       object-fit: cover;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
       flex-shrink: 0;
     }
 
+    .profile-intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .profile-intro h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-family: 'Valley Sans', 'Segoe UI', sans-serif;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     }
 
     .profile-intro p {
-      font-size: 1rem;
-      color: #f0f0f0;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
+    /* Section Headings with Top Border Lines */
     h2 {
       font-size: 1.8rem;
       font-weight: 600;
-      margin-top: 35px;
-      margin-bottom: 15px;
+      margin-top: 40px;
+      margin-bottom: 18px;
+      padding-top: 25px;
       font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     p {
@@ -247,11 +252,10 @@
           <h1>Hi!</h1>
           <p>I’m Eliana Camargo, also known as The Healing Fairee. My greatest passion is anything related to health and well-being, and helping others grow into the best version of themself!</p>
           <p>I was diagnosed with both ADHD and Fibromyalgia at 23 years old. But I was later diagnosed with ME/CFS which I feel is a much more accurate representation of the health issues I deal with. I’ve been on a journey of healing myself, both from my physical ailments and mental health battles. I used to be suicidally depressed, but have majorly overcome that by going gluten free!</p>
+          <p>I've also dealt with a fearful avoidant (leaning anxious) attachment style, which I have come a long way in healing and becoming much more securely attached.</p>
         </div>
       </div>
 
-      <p>I've also dealt with a fearful avoidant (leaning anxious) attachment style, which I have come a long way in healing and becoming much more securely attached.</p>
-      
       <p>Nothing excites me more than help others heal themselves, using the knowledge I’ve accrued over the years! And so I make content on YouTube on all topics related to well-being, and host this website to give away free guides for you to download!</p>
       
       <p>I'm a big believer that healing should never be behind a paywall, and so I will always provide resources on how to heal for free. However, if you want to work directly with me in workshops, I may offer them in the future :) Subscribe to my email list if you'd like to be the first to learn about those! The workshops will cost a small fee, but all of the information I will be guiding you through can be found for free on my YouTube channel. They will just be for those who want their hand held along the way, if that's something that calls out to you!</p>
@@ -278,7 +282,7 @@
 
   <!-- Script: Fetch Header Links -->
   <script>
-    fetch('nav.html')
+    fetch('nav.html?v=1')
       .then(res => res.text())
       .then(data => {
         document.getElementById('main-header').innerHTML = data;
