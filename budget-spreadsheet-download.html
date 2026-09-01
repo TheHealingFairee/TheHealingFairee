@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Template is Ready — The Healing Fairee</title>
+  <title>Your Template is Ready | The Healing Fairee</title>
 
   <style>
     /* Custom Font Setup */
     @font-face {
       font-family: 'Valley Sans';
-      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype');
       font-weight: 100 900;
       font-style: normal;
     }
@@ -46,7 +47,7 @@
       font-family: 'Valley Sans', 'Segoe UI', sans-serif;
       font-size: 2.2rem;
       font-weight: 600;
-      color: #ffffff !important;
+      color: #ffffff;
       text-decoration: none;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
       margin-right: auto;
@@ -61,7 +62,7 @@
 
     /* Transparent Black Nav Buttons */
     .nav-btn {
-      color: #ffffff !important;
+      color: #ffffff;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 600;
@@ -76,7 +77,7 @@
 
     .nav-btn:hover {
       background-color: rgba(0, 0, 0, 0.75);
-      color: #ffffff !important;
+      color: #ffffff;
     }
 
     /* Dropdown Styling */
@@ -99,7 +100,7 @@
       position: absolute;
       right: 0;
       top: calc(100% + 6px);
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(6px);
       box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
       border-radius: 8px;
@@ -109,7 +110,7 @@
     }
 
     .dropdown-content a {
-      color: #ffffff !important;
+      color: #ffffff;
       padding: 12px 20px;
       text-decoration: none;
       display: block;
@@ -126,63 +127,35 @@
       display: block;
     }
 
-    /* Main Container Card */
+    /* Download Container & Button */
     main {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px;
+      padding: 20px;
       width: 100%;
     }
 
-    .download-card {
-      background-color: #ffffff;
-      color: #2c2c2c;
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 550px;
-      width: 100%;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    .download-container {
       text-align: center;
+      max-width: 650px;
+      width: 100%;
     }
 
-    .download-title {
-      font-size: 2.2rem;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-    }
-
-    .download-description {
-      font-size: 1.05rem;
-      color: #555555;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    .copy-btn {
+    .download-link {
       display: inline-block;
-      background-color: #b75aff;
-      color: #ffffff !important;
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 16px 32px;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(183, 90, 255, 0.4);
-      transition: background-color 0.2s, transform 0.2s;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: underline;
+      transition: opacity 0.2s, transform 0.2s;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }
 
-    .copy-btn:hover {
-      background-color: #8c26d4;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 768px) {
-      header#main-header {
-        padding: 15px 20px;
-      }
+    .download-link:hover {
+      opacity: 0.85;
+      transform: scale(1.02);
     }
   </style>
 </head>
@@ -191,13 +164,20 @@
   <header id="main-header"></header>
 
   <main>
-<main>
-    <div class="download-card">
-      <h1 class="download-title">You're All Set!</h1>
-      <p class="download-description">Click the button below to save a copy of the budget spreadsheet directly into your Google Drive account.</p>
-
-      <a href="https://docs.google.com/spreadsheets/d/1NfA5Vr_D8YY8iRVIkX9HeDKw8279iFo94hglpGbj8to/copy" target="_blank" class="copy-btn">
-        Access Budget Template ↗
+    <div class="download-container">
+      <a href="https://docs.google.com/spreadsheets/d/1NfA5Vr_D8YY8iRVIkX9HeDKw8279iFo94hglpGbj8to/copy" target="_blank" class="download-link">
+        Click Here to Access Your Google Sheets Template
       </a>
     </div>
   </main>
+
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
