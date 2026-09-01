@@ -4,51 +4,342 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>30 Perspective Shifts I’ve Had About Dating — The Healing Fairee</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom Font Setup */
+    @font-face {
+      font-family: 'Valley Sans';
+      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('../beach.jpg') no-repeat center center fixed,
+                  url('beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    /* Shared Header Layout */
+    header#main-header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      background: transparent;
+    }
+
+    /* Logo Styling */
+    .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #ffffff !important;
+      text-decoration: none;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      margin-right: auto;
+    }
+
+    /* Navigation Links Container */
+    .main-nav {
+      display: flex !important;
+      align-items: center;
+      gap: 15px;
+      margin-left: auto;
+    }
+
+    /* Rounded Pill Button Style */
+    .nav-btn {
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-btn:hover {
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #ffffff !important;
+    }
+
+    /* Dropdown Menu Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 12px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a {
+      color: #ffffff !important;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Main Container & Article Card */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px 20px 60px 20px;
+      width: 100%;
+    }
+
+    .article-card {
+      background-color: #ffffff;
+      color: #2c2c2c;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 1200px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      line-height: 1.7;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #b75aff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .article-title {
+      font-size: 2.4rem;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      line-height: 1.25;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666666;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
+    }
+
+    /* Main Banner / Top Image */
+    .hero-image {
+      display: block;
+      max-width: 550px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 25px auto;
+      border-radius: 8px;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: #333333;
+    }
+
+    .article-content h2, .article-content h3 {
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      margin: 35px 0 15px 0;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+    }
+
+    .article-content a {
+      color: #b75aff;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: #8c26d4;
+    }
+
+    /* Floating & Full Width Images inside post */
+    .float-left {
+      float: left;
+      width: 40%;
+      max-width: 320px;
+      margin: 0 20px 15px 0;
+      border-radius: 8px;
+    }
+
+    .float-right {
+      float: right;
+      width: 45%;
+      max-width: 360px;
+      margin: 0 0 15px 20px;
+      border-radius: 8px;
+    }
+
+    .full-width-img {
+      display: block;
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      margin: 25px auto;
+      border-radius: 8px;
+    }
+
+    .caption {
+      font-size: 0.8rem;
+      color: #777777;
+      margin-top: -10px;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Author Footer Profile */
+    .author-profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .author-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h3 {
+      font-size: 1.1rem;
+      color: #111111;
+      margin-bottom: 4px;
+    }
+
+    .author-info a {
+      color: #b75aff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Navigation Pagination */
+    .post-pagination {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding-top: 15px;
+      font-weight: 600;
+    }
+
+    .post-pagination a {
+      color: #b75aff;
+      text-decoration: none;
+    }
+
+    .post-pagination a:hover {
+      text-decoration: underline;
+    }
+
+    /* Clearfix helper */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    @media (max-width: 768px) {
+      header#main-header {
+        padding: 15px 20px;
+      }
+      .article-card {
+        padding: 25px 20px;
+      }
+      .float-left,
+      .float-right {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 15px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav-container">
-      <a href="../index.html" class="site-title">The Healing Fairee</a>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../blog.html" class="active">Blog</a></li>
-          <li><a href="../freebies.html">Freebies</a></li>
-          <li><a href="../about.html">About Me</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- Shared Header Placeholder -->
+  <header id="main-header"></header>
 
-  <main class="post-container">
-    <article class="blog-post">
-      <header class="post-header">
-        <h1 class="post-title">30 Perspective Shifts I’ve Had About Dating</h1>
-        <div class="post-meta">
-          <time datetime="2024-12-16">December 16, 2024</time>
-          <span class="author">By Eliana Camargo</span>
-        </div>
-      </header>
+  <main>
+    <article class="article-card clearfix">
+      <a href="../blog.html" class="back-link">← Back to Blog</a>
+      
+      <h1 class="article-title">30 Perspective Shifts I’ve Had About Dating</h1>
+      <div class="article-meta">Published December 16, 2024 • Written by Eliana Camargo</div>
 
-      <div class="post-image main-image">
-        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734230003491-PTNX16YJM2Y28MIXBB97/unsplash-image-BcVvVvqiCGA.jpg" alt="A man twirling his girlfriend">
-      </div>
-
-      <div class="post-body">
+      <div class="article-content">
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734230003491-PTNX16YJM2Y28MIXBB97/unsplash-image-BcVvVvqiCGA.jpg" alt="A man twirling his girlfriend" class="hero-image">
+        
         <p>After about 12 years of dating and being in relationships my perspective of love has changed quite a bit! When I was a kid I was a hopeless romantic, dreaming of the day I’d find The One. But over the years I’ve learned the hard way that love isn’t the way it’s presented in hallmark movies. I’ve become a little more realistic, and a lot more educated about how relationships work! So I figured I’d share some of the lessons I’ve learned along the way :) Keep in mind that I don't have all the answers, and in the future I might change some of these opinions. This is just what I've learned from my experience, and from researching relationship psychology a little too much!</p>
 
         <p><strong>1. If you’re not certain about them, they’re not the one -</strong> Growing up I used to think that you had to be 1000% certain that someone was right for you, and if you had any doubts then you weren’t meant to be, because The One would never give you doubts. But through studying relationship psychology and reading thousands of love stories, I’ve learned that that’s not true at all! It’s normal and healthy to feel doubts from time to time, as long as it’s not a constant. There have been so many examples in my life and in others where we feel 100% certain someone is our soulmate till death do us part, but we end up breaking up anyway. And so many couples who have a healthy level of questioning the person they’re dating, but they end up in a happy marriage for decades. Speaking of “the one”, that leads us to the next point:</p>
 
         <p><strong>2. The One isn’t real -</strong> When I was a little kid, I totally believed in The One. Meaning there is 1 human out of the 8 billion on Earth that is our soulmate who we’re meant to be with till death do you part. But I quickly learned that that’s a fairytale, and there are multiple people we could have a beautiful life with. My thought process evolved a few times since then, I later believed it was random chance you’d stumble upon someone you’re compatible with, and you could pass by a potential life partner at the grocery store but never say hi and miss out on that opportunity. But after my spiritual awakening I believe there’s still some magic involved, that we attract certain people to us, and so if you set the intention on manifesting a partner with certain qualities, the universe will conspire to bring you two together in divine timing. And that there are multiple people you could potentially have a successful happy partnership with. But not one predestined soulmate.</p>
 
-        <div class="post-image float-right">
-          <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/99f42871-0cde-4522-aada-c04138f9d34a/unsplash-image-IfjHaIoAoqE.jpg" alt="A bride and groom holding hands">
-        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/99f42871-0cde-4522-aada-c04138f9d34a/unsplash-image-IfjHaIoAoqE.jpg" alt="A bride and groom holding hands" class="float-right">
 
         <p><strong>3. Choosing someone makes them the right person for you -</strong> I’ve always had a crippling fear of choosing the wrong partner to commit to. When getting to know someone who’s 90% perfect, I’d ask myself if I should just stay single hoping that maybe some day, some year I’d eventually meet someone better, someone that I wouldn’t have any questions or doubts about. But I’ve learned that stems from avoidance, and as discussed before it’s okay to not feel that 1000% certainty about someone. Part of life is accepting that you can never truly know if you’re with the absolute best match for you. And so I’ve surrendered to that uncertainty, and instead <em>consciously choose my partner.</em> I choose to build a life with him, because we like each other and are attracted to each other, we’re compatible in all the ways that matter, we respect each other, and both have a desire to build a relationship and grow together. And that’s enough. And could there be someone even better for me out there? Maybe. But that doesn’t matter because I choose to be with him. The fact that you’re choosing this person to grow a relationship with *is * what makes them the right partner for you. And even if you were dating someone else, you’d probably be having the same thoughts about them too, because no one is perfect. So as long as you’re with a good partner who checks the boxes and treats you well, that’s enough.</p>
 
@@ -56,9 +347,7 @@
 
         <p><strong>5. The key to lasting healthy relationships is detachment.</strong> As the age old saying goes, You’ll find love when you stop looking for it. Or when you least expect it. And it’s so true! People can smell desperation, and it’ll only repel them. Anytime I’ve tried dating while in a desperate state the universe makes sure that that only crummy people appear, people that I wouldn’t be interested in anyway. But anytime I’m happy and content in my own life and not needing a guy in my life to be happy, is when I serendipitously stumble upon wonderful guys. That’s exactly what happened when I met my boyfriend.</p>
 
-        <div class="post-image float-left">
-          <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734230159892-Y5BB8HRSI2IHMYOX8332/unsplash-image-IyqFodBbmBQ.jpg" alt="Sunset romance">
-        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734230159892-Y5BB8HRSI2IHMYOX8332/unsplash-image-IyqFodBbmBQ.jpg" alt="Sunset romance" class="float-left">
 
         <p><strong>6. It's not about how you feel about them, it's about how they make you feel.</strong> It doesn’t matter if he’s the most dazzling man ever who makes your heart skip a beat whenever you think about him. Or if he’s has so many attractive qualities like a great job, healthy habits, etc. How does he treat you? How does he make you <em>feel</em>. The practical qualities someone has matters way less when it comes to a happy relationship compared to the actual <em>relationship</em> you guys share, aka how y’all treat eachother.</p>
 
@@ -72,9 +361,7 @@
 
         <p><strong>11. Have a weekly social hobby</strong> where you meet people in real life to help you detach from feeling desperate. It helps relieve the pressure of searching on dating apps, and instead keeps an avenue open where you can meet people and make friends. And that way you can see if you vibe in person instead of wasting time going on coffee dates with a stranger from an app that you don’t click with at all! Now you won’t have to worry about when you’re going to meet your future partner, because you know you’re constantly meeting new people and have an avenue open. And so you can just relax knowing that it’s inevitable that you’ll meet someone eventually because that door is now open. But it’s important when you show up every week that you aren’t there looking for meat, just chill and enjoy your hobby and the friendships you’re making, and one day if you meet someone special while there, even better!</p>
 
-        <div class="post-image full-width">
-          <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/7bd07695-6433-40d2-9998-6969689c47e2/unsplash-image-6Woj_wozqmA.jpg" alt="A group of people swing dancing">
-        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/7bd07695-6433-40d2-9998-6969689c47e2/unsplash-image-6Woj_wozqmA.jpg" alt="A group of people swing dancing" class="full-width-img">
 
         <p><strong>12. I’m complete on my own</strong>. I used to feel like I needed a boyfriend to complete me, or to save me from my loneliness. But I had to learn that no one will ever save me but me. I don’t need to put being in a relationship on a pedestal like if it was the answer to all my problems. Like I’ll never be depressed again and I’ll just be over the moon happy once I finally get a boyfriend. I had to learn to feel complete on my own before my boyfriend came into my life. And he’s amazing and brings so much joy to my life, and I no longer feel touch starved. But being with him also isn’t this ecstacy inducing thing that fixed all my life problems. I already learned how to be happy being single and not feel like I was lacking anything, so the transition to being in a relationship actually feels pretty similar to being single, but with a nice cherry on top.</p>
 
@@ -84,9 +371,7 @@
 
         <p><strong>15. Lusting after someone isn’t a sign that I should pursue them.</strong> This is because fearful avoidant people use sex as a means to gain intimacy from people who are emotionally unavailable. The times where I’ve felt the most immense lust towards someone, they were the most emotionally unavailable men I’ve ever dated. And so lust is actually a way that my subconscious was trying to lure me to gain a version of intimacy from someone who couldn’t give it to me in an emotional sense.</p>
 
-        <div class="post-image float-left">
-          <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734230101111-X5D8V43R4Y05PPFCSTGN/unsplash-image-D3SzBCAeMhQ.jpg" alt="A calm scenic background">
-        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734230101111-X5D8V43R4Y05PPFCSTGN/unsplash-image-D3SzBCAeMhQ.jpg" alt="A calm scenic background" class="float-left">
 
         <p><strong>16. Tarot is NOT accurate!!</strong> Except sometimes it is, which is what can mess with our mind and even make us addicted to tarot readings. I’ve come to learn that tarot is a tool that reflects what’s going on in your subconscious mind. Sometimes this results in showing you what’s going to happen if you continue down the same path, but sometimes it reflects what you think about a lot or what you hope will come true, or fear will come true but isn’t actually going to. Tarot doesn’t predict the future, but it sometimes it seems to since it reflects the energy you’re in. Now I don’t think tarot in and of itself is bad, but it easily can become toxic. If you’re constantly doing tarot readings about how your dating life is going to pan out, that stems from an anxious attachment style. It shows you’re way too attached to the outcome, or to the future, and that often repels what you want. One key to having a healthy relationship is enjoying the present moment instead of constantly trying to figure out what the future holds, like if they’re going to be in your life or not. So it’s better to be present and embrace the uncertainty, and figure out if your date will turn into your boyfriend by actually getting to know them! Because tarot more often than not isn’t even accurate. There have been a couple different guys in my past who I was way too obsessed with that tarot would tell me over and over that I was going to marry. But I never even got into a relationship with either of them! Tarot doesn’t predict the future, it just reflects what’s deep in your mind. So quit obsessing over the cards, and just live.</p>
 
@@ -96,17 +381,13 @@
 
         <p><strong>19 . But don’t be strict about your list</strong>. Despite thinking a list is important, I also learned that you shouldn’t be overly strict about your list. If you wrote down 100 qualities that you need to find in a partner or else you’ll never get into a relationship with them, really ask yourself why you need every quality on that list. Are you actually dismissive avoidant and are trying to protect yourself from ever falling in love by requiring your ideal partner to be this perfect person that doesn’t exist? Remember, everything in balance. Don’t settle on someone who doesn’t at least meet the obvious standards you deserve, just because they make you feel intensely, but also don’t dismiss someone because they have minor differences in how they view the world, or flaws that everybody has.</p>
 
-        <div class="post-image full-width">
-          <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/815f8e28-f5da-4cf9-9544-ae07a66d9dc2/unsplash-image-RBouLnm0L0Q.jpg" alt="A wooden sign with an arrow and text that says happily ever after">
-        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/815f8e28-f5da-4cf9-9544-ae07a66d9dc2/unsplash-image-RBouLnm0L0Q.jpg" alt="A wooden sign with an arrow and text that says happily ever after" class="full-width-img">
 
         <p><strong>20. There won’t be any signs that he’s near</strong>. When I was single I used to be desperate to meet my future boyfriend, and would try to intuit when they were coming into my life. There were multiple times where I had this deep gut feeling that he was right around the corner, but that corner extended for years! He never came anytime near those moments. And so I learned that there is no 6th sense feeling that will tell me I’m going to get into a relationship soon. But now that I have a boyfriend I was curious what I was feeling a couple days before I met him, so I went back through my journal, and I had written about how it felt like my future partner was so far away and I was never going to meet him. I now realize that trying to intuit when my partner would come into my life is a form of attachment instead of living in the present moment. And attachment pushes our desires away.</p>
 
         <p><strong>21. Knowing they’re my husband on the first date</strong>. Similarly to the last point, I wanted the universe to give me a giant sign that someone was going to be my husband when I first met them, otherwise I didn’t want to waste my time getting to know them. I had a crippling fear of getting to know someone and then getting heartbroken in the end, so I needed to be certain on the first date that they were my forever person. But the universe doesn’t operate that way, at least not for me. I’ve heard stories of this happening to other people where they know someone is the one right away. And sometimes they’re right, but sometimes they’re not and years later they break up. I had a huge epiphany from the universe near the beginning of my current relationship that it’s not in my life path to have that certain feeling from Day 1, because that’s the whole point! Part of the spiritual journey that I’m on is surrendering that you’ll never know if someone is the one until you actually get to know them. Needing to know if someone is the one right away is attachment to the outcome, instead of living in the present moment. And instead I needed to face my crippling fear of getting heartbroken, because love is a gamble. It’s a risk. God’s never going to give me a sign that someone is my forever on the first date. I have to actually get to know them to find that out.</p>
 
-        <div class="post-image float-right">
-          <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734232018275-6LO9PNTP2SWA8BOGTL7J/unsplash-image-E8H76nY1v6Q.jpg" alt="A paper torn heart on a string">
-        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/1734232018275-6LO9PNTP2SWA8BOGTL7J/unsplash-image-E8H76nY1v6Q.jpg" alt="A paper torn heart on a string" class="float-right">
 
         <p><strong>22. A break up isn’t a failure.</strong> You both learned and grew together and potentially had a few beautiful years together. Just because it ended doesn’t mean that it wasn’t meant to be. Everything is impermanent, and even though it would be nice to have a life partner till death do you part, even short relationships are beautiful and worth experiencing.</p>
 
@@ -120,9 +401,7 @@
 
         <p><strong>27. Regulating my own emotions</strong>. I used to be very dependent on my ex to manage my emotional state, which was a pretty unhealthy dynamic. And then when it was time to leave the relationship I was SO scared to breakup with him because I couldn't imagine facing such intense emotions without his support. But a friend taught me how important it is to learn how to self-soothe, and create emotional resilience from within. Of course everything in balance, there’s nothing wrong with going to loved ones for support. But it’s unhealthy if you depend on them for every emotion all the time and you can’t face the thought of dealing with your emotions alone. And the only way to learn to do that is to be alone. But it’s so empowering to be able to regulate your own emotions. It gives you a sense of confidence and trust in yourself, and leads to forming securely attached relationships instead of anxiously attached ones.</p>
 
-        <div class="post-image float-left">
-          <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/b9b383ec-14c5-4057-a72b-a7de2307062d/unsplash-image-fnKgDuD85DM.jpg" alt="Mindfulness and self-reflection">
-        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/b9b383ec-14c5-4057-a72b-a7de2307062d/unsplash-image-fnKgDuD85DM.jpg" alt="Mindfulness and self-reflection" class="float-left">
 
         <p><strong>28. Overcoming Limerence</strong> - It’s important to learn how to bring the focus back to yourself when you’re obsessing over someone. I’m unlucky in that ever since elementary school every crush I’ve ever had I’ve experienced as limerence, which is a deep unhealthy obsession where you can’t eat, you can’t sleep, and you definitely can’t focus on work or school because you nonstop think about your crush and can’t stop. It would literally make me feel sick, I hated having a crush on anyone because it felt like a curse, it was literal torture! Luckily I was wise from a young age and I knew that this wasn’t love, it was just a crush. But I wasn’t wise enough to know how to control it. Thankfully as an adult I’ve learned how to observe my thoughts, and then bring the focus back to myself and what I’m doing, over and over again. Or if I catch myself daydreaming about them, to imagine my energy going from shooting outwards towards them, to pulling it back and have the energy be sucked back into me. And it’s not easy because it’s addictive entertaining daydreams about your crush! But meditating every morning is immensely helpful in training your brain to be the observer of your thoughts rather than get carried away by them. Training your mind greatly helps reduce limerence.</p>
 
@@ -130,7 +409,7 @@
 
         <p><strong>30. Charisma is not important</strong> - I used to only want to get involved with someone if they were charismatic, because it’s really attractive. But I’ve learned that in the long term it literally matters so little if someone is charismatic. Charisma is not what makes a relationship good, the actual relationship you have with eachother or how you treat eachother is what matters. Not if they’re sparkly in the first meeting. And Charisma can often accompany red flags! Not that it’s a red flag in and of itself, but players are often charismatic. So more often than not in my experience the guys that I’ve met who are charismatic were bad news. And even myself, when I was younger I used to use my charisma for evil when I had zero desire for a long term relationship but was just looking for fun, so I know this phenomenon very well. Luckily I’m not in that unevolved era anymore. And so charisma on a first date is no longer something that I care about. It’s a nice bonus, but it’s not necessary by any means and has zero impact on how good a relationship is in the longterm.</p>
 
-        <p class="text-center"><em>Watch this topic in video form: Coming soon!</em></p>
+        <p style="text-align: center; font-style: italic;">Watch this topic in video form: Coming soon!</p>
       </div>
 
       <footer class="author-profile">
@@ -140,17 +419,32 @@
           <a href="https://TheHealingFairee.com" target="_blank">https://TheHealingFairee.com</a>
         </div>
       </footer>
-    </article>
 
-    <nav class="post-pagination">
-      <a href="how-to-strengthen-intuition.html" class="prev-post">← How to Strengthen Your Intuition</a>
-      <a href="cipro-is-poison.html" class="next-post">CIPRO IS POISON →</a>
-    </nav>
+      <nav class="post-pagination">
+        <a href="how-to-strengthen-intuition.html" class="prev-post">← How to Strengthen Your Intuition</a>
+        <a href="cipro-is-poison.html" class="next-post">CIPRO IS POISON →</a>
+      </nav>
+    </article>
   </main>
 
-  <footer>
-    <p>Contact me | Copyright © 2021 The Healing Fairee</p>
-  </footer>
+  <!-- Script: Fetch Header Links dynamically from nav.html -->
+  <script>
+    fetch('../nav.html?v=1')
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.text();
+      })
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      })
+      .catch(() => {
+        fetch('nav.html?v=1')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('main-header').innerHTML = data;
+          });
+      });
+  </script>
 
 </body>
 </html>
