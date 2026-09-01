@@ -1,1 +1,119 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adderall Ruined My Life. - The Healing Fairee</title>
+    <style>
+        @font-face {
+            font-family: 'Valley Sans';
+            src: url('/fonts/ValleySans-Variable.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Valley Sans', sans-serif;
+            background-color: #f4f1ea;
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* Navigation Container */
+        #nav-placeholder {
+            width: 100%;
+        }
+
+        /* Article Wrapper & Card Styling */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .meta-info {
+            font-size: 0.95rem;
+            color: #666666;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        blockquote {
+            margin: 30px 0;
+            padding: 15px 25px;
+            background-color: #f9f8f6;
+            border-left: 4px solid #8b7355;
+            font-style: italic;
+            font-size: 1.15rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px 15px;
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shared Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Blog Article Container -->
+    <div class="container">
+        <h1>Adderall Ruined My Life.</h1>
+        <div class="meta-info">Published on April 19, 2025 • By Eliana Camargo</div>
+
+        <p>I used to work as an environmental scientist for Cal Fire and later at the Department of Water Resources. During my time there, I constantly found myself struggling with inattention, restlessness, and the mental load of keeping up with daily expectations. After learning more about how ADHD presents differently in women, I decided to seek out a professional evaluation. The assessment led to a formal diagnosis. While I wasn't initially looking for medication, I ultimately decided to try a low prescribed dose of 15 mg of Adderall.</p>
+
+        <p>At first, the effect was remarkable—it brought immense focus, clarity, and energy. But it didn't take long for the side effects to build up. I began noticing subtle shifts in my social interactions, an underlying irritability, floating sensations, and constant stomach upset. Worst of all was the severe insomnia; I was frequently getting only about four hours of light sleep a night. To avoid crashing, I started taking it on weekends as well, which rapidly compounded into a severe, long-term sleep deficit.</p>
+
+        <p>That level of sustained sleep loss took a massive toll. It ultimately triggered a severe flare-up of fibromyalgia—a condition I had experienced symptoms of since middle school without an official diagnosis. The turning point came right after my 24th birthday. I woke up with intense joint pain and found myself temporarily unable to walk or support any weight on my limbs. I ended up needing a wheelchair, a boot brace, and crutches just to move around, alongside work-from-home accommodations.</p>
+
+        <blockquote>
+            "I had to learn to adapt my environment and my work to suit my brain, rather than trying to alter my brain to fit a job."
+        </blockquote>
+
+        <p>Recognizing that the medication-induced insomnia was directly causing the flare-up, I knew I had to quit Adderall. Withdrawing was incredibly challenging—the brain fog, fatigue, and intense cravings made it feel nearly impossible at times. To push through, I relied on reading reminder notes saved on my phone and incrementally extended my breaks from the medication: moving from one month, to three months, to six months, and eventually a full year.</p>
+
+        <p>Over five years later, I remain completely off Adderall and manage my health naturally. Looking back, I recognize that while some people genuinely thrive on ADHD medication, others stay dependent despite experiencing severe side effects. My biggest lesson through all of this was learning to reshape my life and environment to support my natural brain, rather than forcing my brain to fit a system that wasn't built for it.</p>
+    </div>
+
+    <!-- Script to dynamically load shared navigation -->
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
+
+</body>
+</html>
