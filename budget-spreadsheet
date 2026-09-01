@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Budget Spreadsheet — The Healing Fairee</title>
+
+  <style>
+    @font-face {
+      font-family: 'Valley Sans';
+      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('/images/beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    header#main-header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      width: 100%;
+    }
+
+    .form-card {
+      background-color: #ffffff;
+      color: #2c2c2c;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 550px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    .form-title {
+      font-size: 2.2rem;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+    }
+
+    .form-description {
+      font-size: 1.05rem;
+      color: #555555;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .optin-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .input-field {
+      padding: 14px 18px;
+      font-size: 1rem;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-field:focus {
+      border-color: #b75aff;
+    }
+
+    .submit-btn {
+      background-color: #b75aff;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .submit-btn:hover {
+      background-color: #8c26d4;
+    }
+
+    .status-msg {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="main-header"></header>
+
+  <main>
+    <div class="form-card">
+      <h1 class="form-title">Free Budget Spreadsheet</h1>
+      <p class="form-description">Enter your email below to get instant access to the Google Sheets budget template.</p>
+
+      <form id="optin-form" class="optin-form">
+        <input type="email" id="email" class="input-field" placeholder="Enter your email address" required>
+        <button type="submit" id="submit-btn" class="submit-btn">Get the Template</button>
+      </form>
+      <div id="status-msg" class="status-msg"></div>
+    </div>
+  </main>
+
+  <script>
+    // Header Loader
+    fetch('nav.html?v=1')
+      .then(res => res.text())
+      .then(data => { document.getElementById('main-header').innerHTML = data; });
+
+    // Form Submission & Redirect Logic
+    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    const form = document.getElementById('optin-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const statusMsg = document.getElementById('status-msg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Submitting...';
+
+      const emailVal = document.getElementById('email').value;
+
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal })
+      })
+      .then(() => {
+        // Redirect to download page after successfully recording email
+        window.location.href = 'budget-spreadsheet-download.html';
+      })
+      .catch(err => {
+        statusMsg.innerText = 'Something went wrong. Please try again.';
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Get the Template';
+      });
+    });
+  </script>
+
+</body>
+</html>
