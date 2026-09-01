@@ -20,36 +20,23 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    html, body {
-      width: 100%;
-      min-height: 100vh;
-    }
-
     body {
       background: url('beach.jpg') no-repeat center center fixed;
       background-size: cover;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: stretch;
       color: #ffffff;
     }
 
-    /* Force the placeholder AND any injected header/nav to span full width horizontally */
-    #nav-placeholder, 
-    #nav-placeholder header, 
-    #nav-placeholder nav, 
+    /* Standardized Header Navigation Layout */
     header#main-header {
-      width: 100% !important;
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      box-sizing: border-box !important;
-    }
-
-    /* Direct padding styling for the header bar */
-    header#main-header, #nav-placeholder header, #nav-placeholder nav {
-      padding: 20px 40px !important;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       background: transparent;
     }
 
@@ -60,20 +47,17 @@
       color: #ffffff;
       text-decoration: none;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-      white-space: nowrap;
     }
 
-    /* Container for menu items forced to horizontal row */
-    .main-nav, #nav-placeholder ul, #nav-placeholder div:has(.nav-btn) {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      gap: 15px !important;
-      list-style: none !important;
+    .main-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
     }
 
     /* Transparent Black Nav Buttons */
-    .nav-btn, #nav-placeholder a:not(.logo-link) {
+    .nav-btn {
       color: #ffffff;
       text-decoration: none;
       font-size: 1rem;
@@ -85,10 +69,9 @@
       transition: all 0.3s ease;
       display: inline-block;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-      white-space: nowrap;
     }
 
-    .nav-btn:hover, #nav-placeholder a:not(.logo-link):hover {
+    .nav-btn:hover {
       background-color: rgba(0, 0, 0, 0.75);
       color: #ffffff;
     }
@@ -109,9 +92,8 @@
       box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
       border-radius: 8px;
       overflow: hidden;
-      z-index: 1000;
+      z-index: 10;
       white-space: nowrap;
-      flex-direction: column !important;
     }
 
     .dropdown-content a {
@@ -121,8 +103,7 @@
       display: block;
       font-size: 0.95rem;
       font-weight: 500;
-      border-radius: 0;
-      background: transparent;
+      transition: background-color 0.2s;
     }
 
     .dropdown-content a:hover {
@@ -130,10 +111,10 @@
     }
 
     .dropdown:hover .dropdown-content {
-      display: flex !important;
+      display: block;
     }
 
-    /* Main Page Content Container */
+    /* Page Content Layout */
     .main-container {
       max-width: 1100px;
       width: 100%;
@@ -216,8 +197,8 @@
     }
 
     @media (max-width: 768px) {
-      header#main-header, #nav-placeholder header, #nav-placeholder nav {
-        padding: 15px 20px !important;
+      header#main-header {
+        padding: 15px 20px;
       }
       .blog-grid {
         grid-template-columns: 1fr;
@@ -230,19 +211,34 @@
 </head>
 <body>
 
-  <!-- Navigation loader placeholder -->
-  <div id="nav-placeholder"></div>
+  <!-- Hardcoded Header to ensure instant loading without JS dependency -->
+  <header id="main-header">
+    <a href="index.html" class="logo-link">The Healing Fairee</a>
+    <nav class="main-nav">
+      <a href="blog.html" class="nav-btn">Blog</a>
+      <div class="dropdown">
+        <a href="#" class="nav-btn">Freebies ▾</a>
+        <div class="dropdown-content">
+          <a href="attachment-styles-workbook.html">Attachment Styles Workbook</a>
+          <a href="adhd-ranking-tool.html">ADHD Ranking Tool</a>
+          <a href="accessible-emotion-wheel.html">Accessible Emotion Wheel</a>
+          <a href="budget-spreadsheet.html">Budget Spreadsheet</a>
+        </div>
+      </div>
+      <a href="about-me.html" class="nav-btn">About Me</a>
+    </nav>
+  </header>
 
-  <!-- Main Content -->
+  <!-- Main Content Container -->
   <main class="main-container">
     <h1 class="page-title">Welcome to my blog!</h1>
 
     <div class="blog-grid">
 
       <!-- Post 1: Adderall Ruined My Life -->
-      <a href="./adderall-ruined-my-life.html" class="blog-card">
+      <a href="blog/adderall-ruined-my-life.html" class="blog-card">
         <div class="thumbnail-container">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%23d4cfc5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%23555555'>Adderall Post Thumbnail</text></svg>" alt="Adderall Ruined My Life">
+          <img src="images/adderall-thumb.jpg" alt="Adderall Ruined My Life">
         </div>
         <div class="card-content">
           <span class="blog-date">April 19, 2025</span>
@@ -251,9 +247,9 @@
       </a>
 
       <!-- Post 2: CIPRO IS POISON -->
-      <a href="./cipro-is-poison.html" class="blog-card">
+      <a href="blog/cipro-is-poison.html" class="blog-card">
         <div class="thumbnail-container">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%23c5cfd4'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%23555555'>Cipro Post Thumbnail</text></svg>" alt="CIPRO IS POISON">
+          <img src="images/cipro-thumb.jpg" alt="CIPRO IS POISON">
         </div>
         <div class="card-content">
           <span class="blog-date">April 2, 2024</span>
@@ -262,9 +258,9 @@
       </a>
 
       <!-- Post 3: Break the Pattern of Dating Emotionally Unavailable People -->
-      <a href="./dating-emotionally-unavailable-people.html" class="blog-card">
+      <a href="blog/dating-emotionally-unavailable-people.html" class="blog-card">
         <div class="thumbnail-container">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%23d4c5ce'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%23555555'>Dating Post Thumbnail</text></svg>" alt="How to Break the Pattern of Dating Emotionally Unavailable People">
+          <img src="images/dating-thumb.jpg" alt="How to Break the Pattern of Dating Emotionally Unavailable People">
         </div>
         <div class="card-content">
           <span class="blog-date">March 15, 2024</span>
@@ -273,9 +269,9 @@
       </a>
 
       <!-- Post 4: Exercising with Fibromyalgia -->
-      <a href="./exercising-with-fibromyalgia.html" class="blog-card">
+      <a href="blog/exercising-with-fibromyalgia.html" class="blog-card">
         <div class="thumbnail-container">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%23c5d4cc'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%23555555'>Fibromyalgia Exercise Thumbnail</text></svg>" alt="Exercising with Fibromyalgia">
+          <img src="images/fibromyalgia-exercise-thumb.jpg" alt="Exercising with Fibromyalgia">
         </div>
         <div class="card-content">
           <span class="blog-date">January 20, 2024</span>
@@ -284,9 +280,9 @@
       </a>
 
       <!-- Post 5: My Healing Journey -->
-      <a href="./my-healing-journey.html" class="blog-card">
+      <a href="blog/my-healing-journey.html" class="blog-card">
         <div class="thumbnail-container">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%23d4cbcf'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%23555555'>Healing Journey Thumbnail</text></svg>" alt="My Healing Journey">
+          <img src="images/healing-journey-thumb.jpg" alt="My Healing Journey">
         </div>
         <div class="card-content">
           <span class="blog-date">November 12, 2023</span>
@@ -295,9 +291,9 @@
       </a>
 
       <!-- Post 6: Mindful Living Practices -->
-      <a href="./mindful-living-practices.html" class="blog-card">
+      <a href="blog/mindful-living-practices.html" class="blog-card">
         <div class="thumbnail-container">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%23ccd4c5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%23555555'>Mindful Living Thumbnail</text></svg>" alt="Mindful Living Practices">
+          <img src="images/mindful-living-thumb.jpg" alt="Mindful Living Practices">
         </div>
         <div class="card-content">
           <span class="blog-date">September 5, 2023</span>
@@ -307,16 +303,6 @@
 
     </div>
   </main>
-
-  <!-- JavaScript to fetch nav.html -->
-  <script>
-    fetch('nav.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('nav-placeholder').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading navigation:', error));
-  </script>
 
 </body>
 </html>
