@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | The Healing Fairee</title>
+  <style>
+    /* Custom Font Setup */
+    @font-face {
+      font-family: 'Valley Sans';
+      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    /* Shared Header Layout */
+    header#main-header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      background: transparent;
+    }
+
+    .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      margin-right: auto;
+    }
+
+    .main-nav {
+      display: flex !important;
+      align-items: center;
+      gap: 15px;
+      margin-left: auto;
+    }
+
+    /* Transparent Black Nav Buttons */
+    .nav-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-btn:hover {
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #ffffff;
+    }
+
+    /* Dropdown Styling - Updated transparency to 0.4 */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 12px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a {
+      color: #ffffff;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      width: 100%;
+    }
+
+    .about-card {
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      padding: 45px 35px;
+      border-radius: 16px;
+      max-width: 850px;
+      width: 100%;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      line-height: 1.7;
+    }
+
+    /* Header Profile Layout */
+    .profile-header {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 35px;
+    }
+
+    .profile-photo {
+      width: 240px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
+    }
+
+    .profile-intro h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .profile-intro p {
+      font-size: 1rem;
+      color: #f0f0f0;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 8px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #f0f0f0;
+      margin-bottom: 15px;
+    }
+
+    /* Contact Links Section */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .contact-list li {
+      font-size: 1rem;
+    }
+
+    .contact-list a {
+      color: #ffffff;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .contact-list a:hover {
+      opacity: 0.8;
+    }
+
+    /* Mobile Responsive Layout */
+    @media (max-width: 650px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile-photo {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header Placeholder -->
+  <header id="main-header"></header>
+
+  <main>
+    <div class="about-card">
+      <div class="profile-header">
+        <img src="About-Me-Photo.jpg" alt="Eliana Camargo" class="profile-photo" />
+        <div class="profile-intro">
+          <h1>Hi!</h1>
+          <p>I’m Eliana Camargo, also known as The Healing Fairee. My greatest passion is anything related to health and well-being, and helping others grow into the best version of themself!</p>
+          <p>I was diagnosed with both ADHD and Fibromyalgia at 23 years old. But I was later diagnosed with ME/CFS which I feel is a much more accurate representation of the health issues I deal with. I’ve been on a journey of healing myself, both from my physical ailments and mental health battles. I used to be suicidally depressed, but have majorly overcome that by going gluten free!</p>
+        </div>
+      </div>
+
+      <p>I've also dealt with a fearful avoidant (leaning anxious) attachment style, which I have come a long way in healing and becoming much more securely attached.</p>
+      
+      <p>Nothing excites me more than help others heal themselves, using the knowledge I’ve accrued over the years! And so I make content on YouTube on all topics related to well-being, and host this website to give away free guides for you to download!</p>
+      
+      <p>I'm a big believer that healing should never be behind a paywall, and so I will always provide resources on how to heal for free. However, if you want to work directly with me in workshops, I may offer them in the future :) Subscribe to my email list if you'd like to be the first to learn about those! The workshops will cost a small fee, but all of the information I will be guiding you through can be found for free on my YouTube channel. They will just be for those who want their hand held along the way, if that's something that calls out to you!</p>
+
+      <h2>Contact Me</h2>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:ContactElianaCamargo@gmail.com">ContactElianaCamargo@gmail.com</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/thehealingfairee/" target="_blank" rel="noopener">@TheHealingFairee</a></li>
+        <li><strong>YouTube:</strong> <a href="http://www.youtube.com/channel/UCpEavshmZCHN8oTLmLtBJdQ" target="_blank" rel="noopener">The Healing Fairee</a></li>
+        <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@thehealingfairee" target="_blank" rel="noopener">@TheHealingFairee</a></li>
+        <li><strong>(Retired) Relationship Advice YouTube Channel:</strong> <a href="https://www.youtube.com/@LibraLoveLounge" target="_blank" rel="noopener">Libra Love Lounge</a></li>
+      </ul>
+
+      <h2>Why the name "The Healing Fairee"?</h2>
+      <p>Well, I was given the nickname "fairy" my freshman year of high school when my theatre teacher said I looked like a fairy. My friend Sammy thought it was cute so she started calling me that, and before I knew it my entire theatre class called me fairy! I took theatre every year, and as the years progressed some of my classmates didn't know that fairy wasn't my real name! When I'd go to add them on Facebook (a sign of my age..) they didn't know who I was. So I decided to add Fairy to my name.</p>
+      
+      <p>Except Facebook decided that "Fairy" wasn't a real name and it wouldn't let me! I'm pretty sure some hippie out there has actually named their child Fairy.. wild choice on Facebook's part to block the name. To circumvent this I tried every variation and spelling of Fairy until I found one it would accept, which is how I landed on Fairee.</p>
+      
+      <p>Once I graduated high school and drifted away from my theatre friends, not many people called me Fairee anymore. Until 2018-2019 when I started doing improv weekly, which is such a love of mine! Improv was always my favorite part of theatre, and so I decided since I was back in a theatre related environment, I would introduce myself as Fairee again :)</p>
+      
+      <p>I then started my main YouTube channel in 2020, and decided The Healing Fairee would be the perfect name for a channel based around healing, well-being, and spirituality. I've actually gone back and forth over the years if I should rename the channel to Eliana Camargo to be taken a little more seriously, since The Healing Fairee has a juvenile connotation (and hard to spell if I'm just telling someone the name out loud!) We'll see if I ever make the change. But that's the story behind my username!</p>
+    </div>
+  </main>
+
+  <!-- Script: Fetch Header Links -->
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
