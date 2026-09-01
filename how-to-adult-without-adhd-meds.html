@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Adult without ADHD Meds Worksheet | The Healing Fairee</title>
+  <style>
+    /* Custom Font Setup */
+    @font-face {
+      font-family: 'Valley Sans';
+      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('../beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #ffffff;
+    }
+
+    /* Standardized Header Navigation Layout */
+    header#main-header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .main-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-btn:hover {
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #ffffff;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a {
+      color: #ffffff;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Worksheet Main Card Layout */
+    .main-container {
+      max-width: 900px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 0 20px 60px 20px;
+    }
+
+    .worksheet-card {
+      background-color: #ffffff;
+      color: #2c2c2c;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+    }
+
+    .page-title {
+      font-size: 2.2rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .author-meta {
+      font-size: 0.9rem;
+      color: #666666;
+      margin-bottom: 25px;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      color: #444444;
+      margin-bottom: 30px;
+    }
+
+    .section-header {
+      font-size: 1.75rem;
+      color: #1a1a1a;
+      margin: 35px 0 15px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eaeaea;
+    }
+
+    .section-intro {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    /* Form and Item Interactive Styles */
+    .item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      background: #f9f9fb;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #eef0f4;
+    }
+
+    .item input[type="number"] {
+      width: 60px;
+      height: 40px;
+      margin-right: 15px;
+      font-size: 1.1rem;
+      text-align: center;
+      flex-shrink: 0;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .item input[type="number"]:focus {
+      border-color: #b75aff;
+    }
+
+    .item-text {
+      align-self: center;
+      font-size: 1rem;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .content-wrapper strong {
+      font-size: 1.1rem;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .content-wrapper p {
+      font-size: 0.95rem;
+      color: #444444;
+      margin: 0;
+    }
+
+    .sort-button {
+      margin: 20px 0;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: #b75aff;
+      color: #ffffff;
+      border: none;
+      border-radius: 25px;
+      transition: background-color 0.2s, transform 0.1s;
+      box-shadow: 0 4px 12px rgba(183, 90, 255, 0.3);
+    }
+
+    .sort-button:hover {
+      background-color: #9b3de8;
+      transform: translateY(-1px);
+    }
+
+    .note {
+      background-color: #f4f0ff;
+      border-left: 4px solid #b75aff;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0 30px 0;
+      font-size: 0.95rem;
+      color: #333333;
+    }
+
+    .smaller-italic {
+      font-size: 0.9em;
+      font-style: italic;
+      color: #666666;
+    }
+
+    .italic-text {
+      font-style: italic;
+    }
+
+    .underline-link {
+      color: #b75aff;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .underline-link:hover {
+      color: #8c26d4;
+    }
+
+    .video-link {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      header#main-header {
+        padding: 15px 20px;
+      }
+      .worksheet-card {
+        padding: 25px 20px;
+      }
+      .item {
+        flex-direction: column;
+      }
+      .item input[type="number"] {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hardcoded Header Navigation -->
+  <header id="main-header">
+    <a href="../index.html" class="logo-link">The Healing Fairee</a>
+    <nav class="main-nav">
+      <a href="../blog.html" class="nav-btn">Blog</a>
+      <div class="dropdown">
+        <a href="#" class="nav-btn">Freebies ▾</a>
+        <div class="dropdown-content">
+          <a href="./attachment-styles-workbook.html">Attachment Styles Workbook</a>
+          <a href="./adhd-ranking-tool.html">ADHD Ranking Tool</a>
+          <a href="./how-to-adult-without-adhd-meds.html">Adulting Without Meds</a>
+          <a href="./accessible-emotion-wheel.html">Accessible Emotion Wheel</a>
+          <a href="./budget-spreadsheet.html">Budget Spreadsheet</a>
+        </div>
+      </div>
+      <a href="../about-me.html" class="nav-btn">About Me</a>
+    </nav>
+  </header>
+
+  <!-- Worksheet Container -->
+  <main class="main-container">
+    <article class="worksheet-card">
+      <h1 class="page-title">How to Adult without ADHD Meds Worksheet</h1>
+      <div class="author-meta">Written By Eliana Camargo • May 28</div>
+
+      <p class="intro-text">
+        This worksheet goes along with my YouTube video <em>How to Adult Without ADHD Meds</em>. Score how well you do with each habit to help you make a plan on what you want to work on first!
+      </p>
+
+      <!-- Section 1: Health Habits -->
+      <h2 class="section-header">Foundational Health Habits</h2>
+      <div class="section" id="health">
+        <p class="section-intro">Score from 1 - 10 how well you feel you do in each of these areas of health:</p>
+        
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <span class="item-text">
+            Prioritizing meditation everyday 
+            <a href="https://youtu.be/kNk49VwNHZU?si=NqkCIXHwGsNQX7L4" target="_blank" class="underline-link video-link">(5 minute beginners meditation video)</a>
+          </span>
+        </div>
+        <div class="item"><input type="number" min="1" max="10"><span class="item-text">Getting 8 hours of sleep a night</span></div>
+        <div class="item"><input type="number" min="1" max="10"><span class="item-text">Having a consistent nighttime routine</span></div>
+        <div class="item"><input type="number" min="1" max="10"><span class="item-text">Prioritizing movement everyday</span></div>
+        <div class="item"><input type="number" min="1" max="10"><span class="item-text">Eating regular meals throughout the day</span></div>
+        <div class="item"><input type="number" min="1" max="10"><span class="item-text">Eating whole foods</span></div>
+        <div class="item"><input type="number" min="1" max="10"><span class="item-text">Tracking nutrients on Cronometer and supplementing deficiencies</span></div>
+
+        <button class="sort-button" onclick="sortItems('health')">Sort by Score</button>
+        
+        <p class="note">
+          Choose whichever area scored the lowest to work on improving this month! <span class="smaller-italic">(Or whichever area calls out to you the most)</span> Also write down the remaining list on your calendar to work on each month.
+        </p>
+      </div>
+
+      <!-- Section 2: Adulting Habits -->
+      <h2 class="section-header">Adulting Habits</h2>
+      <div class="section" id="adulting">
+        <p class="section-intro">Now score 1-10 which of these habits call out to you as something you most want to implement or improve.</p>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>To Do lists</strong>
+            <p>How well do you feel your to do list works for you? I like using a digital to do list like Ticktick <span class="smaller-italic">(not to be confused with tiktok which is an app that makes you less productive lol)</span> because I can set reoccurring tasks, have reminders pop up on my phone, and move multiple tasks to another date without having to rewrite everything. You can also create tags and group items by type, like admin tasks, chores, errands, etc. There are also other online to do lists like Todoist you can check out, but if you want to try TickTick for free, I have a referral link: <a href="https://ticktick.com/r?c=n0z1w9mv" target="_blank" class="underline-link">try TickTick</a>.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>Time blocking</strong>
+            <p>Schedule blocks of time during the day when you’ll work on admin tasks, chores, errands, etc. and have reminders pop up on your phone. For this I like to use Google Calendar.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>20 minute rule</strong>
+            <p>It causes less resistance to say you’re only going to do something for 20 minutes, or even 5 if that’s still too overwhelming! Plus often times once you start, the momentum helps keep you going even longer than you had planned! Try adding a timeblock to your calendar to do a specific task for 20 or 5 minutes.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>10 second rule</strong>
+            <p>If something takes less than 10 seconds, do it immediately. Like washing the dishes instead of leaving them in the sink, or opening the mail instead of setting it on your desk.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>Habit stacking</strong>
+            <p>Create a habit where every time you do something, you automatically do something right after. Like making the bed right after you get out of bed. Or everyday after you brew coffee you meditate for 5 minutes.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>Setting the intention</strong>
+            <p>Everyday remind yourself of the habit you’re trying to start. Write the habit as a recurring task on your to do list so you have to read it every day. Or put sticky notes around your house with the habit, like "10 seconds? Do it now!”.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>ScreenZen</strong>
+            <p>I use the app ScreenZen to delay opening any social media apps by 8 seconds (or whatever number you program it to). This helps me break the cycle of mindlessly flipping back and forth between apps!</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>Breaking tasks up into chunks</strong>
+            <p>Break down any large task into smaller chunks to help prevent the paralysis of not knowing what the next step is. This also gives you a boost of dopamine anytime you check something off! I do this for my laundry adding the tasks: Put clothes into the washer, Into the dryer, Fold the clothes, and Put the clothes away.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>Music</strong>
+            <p>When getting any work done that requires using your brain try listening to Lofi. If you’ve tried that already, try ADHD Binaural Beats which are proven to help you focus by stimulating your brain into Beta frequency.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <input type="number" min="1" max="10">
+          <div class="content-wrapper">
+            <strong>Autopay</strong>
+            <p>Set up all your bills on autopay! But if your apartment only accepts checks, you can use the bank Bilt which automatically mails a check to them every month. Plus you get credit card points for using it, with no fees! This is not sponsored but I do have a referral link: <a href="https://bilt.page/r/JMTD-GQAD" target="_blank" class="underline-link">sign up for Bilt</a>. Since this is a credit card, only use this method if you know you’re someone who can use a credit card responsibly, and also pay off the FULL credit card bill every month <span class="italic-text">(also set to autopay!)</span>.</p>
+          </div>
+        </div>
+
+        <button class="sort-button" onclick="sortItems('adulting')">Sort by Score</button>
+
+        <p class="note">
+          The key to improving these skills is to <strong>only implement one new habit</strong> every week or even every month. You’ll get overwhelmed if you try to overhaul your life all at once! So set the intention to start doing only one new habit, and once it becomes autopilot you can add another.
+        </p>
+
+        <p class="note">
+          My final tip is to <strong>embrace imperfection</strong>. Have grace with yourself! Some days your brain will be more cooperative than others, so don’t beat yourself up! It’s all part of the ebb and flow of life. One day being off your routine isn’t going to ruin your life. When you have ADHD adulting can be harder than it is for a neurotypical person, and you’re allowed to feel frustrated by that. But don’t dwell in the feeling for too long or feel like you’re a failure in comparison. Your life is going to look a little different, and that’s okay! It’ll be messy but that’s beautiful because it’s you. 😊 So have self-compassion and embrace that.
+          <br><br>Good luck ❤️
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Sorting Script -->
+  <script>
+    function sortItems(sectionId) {
+      const section = document.getElementById(sectionId);
+      const items = Array.from(section.querySelectorAll('.item'));
+
+      items.sort((a, b) => {
+        const valA = parseInt(a.querySelector('input').value) || 0;
+        const valB = parseInt(b.querySelector('input').value) || 0;
+
+        if (sectionId === 'health') {
+          return valA - valB; // Smallest to largest for health
+        } else if (sectionId === 'adulting') {
+          return valB - valA; // Largest to smallest for adulting
+        }
+        return 0;
+      });
+
+      const sortButton = section.querySelector('.sort-button');
+      items.forEach(item => section.insertBefore(item, sortButton));
+    }
+  </script>
+</body>
+</html>
