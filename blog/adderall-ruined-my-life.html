@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Exercise with Fibromyalgia and CFS | The Healing Fairee</title>
+  <title>The Healing Fairee</title>
   <style>
     /* Custom Font Setup */
     @font-face {
       font-family: 'Valley Sans';
-      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
-           url('../Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype'),
-           url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype');
       font-weight: 100 900;
       font-style: normal;
     }
@@ -23,17 +22,16 @@
     }
 
     body {
-      background: url('../beach.jpg') no-repeat center center fixed,
-                  url('beach.jpg') no-repeat center center fixed;
+      background: url('beach.jpg') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #222222;
+      color: #ffffff;
     }
 
-    /* Shared Header Layout */
+    /* Shared Header Layout - Forces Left and Right Alignment */
     header#main-header {
       width: 100%;
       padding: 20px 40px;
@@ -51,14 +49,14 @@
       color: #ffffff;
       text-decoration: none;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-      margin-right: auto;
+      margin-right: auto; /* Pushes the logo to the far left */
     }
 
     .main-nav {
       display: flex !important;
       align-items: center;
       gap: 15px;
-      margin-left: auto;
+      margin-left: auto; /* Pushes the nav links to the far right */
     }
 
     /* Transparent Black Nav Buttons */
@@ -81,7 +79,7 @@
       color: #ffffff;
     }
 
-    /* Dropdown Styling - .4 Opacity */
+    /* Dropdown Styling */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -128,141 +126,103 @@
       display: block;
     }
 
-    /* Main Container - Extra Wide, Solid White Box */
+    /* Main Container */
     main {
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      padding: 40px 20px;
+      align-items: center;
+      padding: 20px;
       width: 100%;
     }
 
-    .article-card {
+    .subscribe-box {
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(3px);
+      padding: 50px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 550px;
+      width: 100%;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .subscribe-box h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .subscribe-box p {
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      color: #e0e0e0;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .signup-form input[type="email"] {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      outline: none;
+    }
+
+    .signup-form button {
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
       background-color: #ffffff;
       color: #222222;
-      padding: 55px 65px;
-      border-radius: 12px;
-      max-width: 1200px;
-      width: 100%;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      line-height: 1.8;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #555555;
-      text-decoration: underline;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    .back-link:hover {
-      color: #000000;
-    }
-
-    .article-title {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-      color: #111111;
-      line-height: 1.25;
-    }
-
-    .article-meta {
-      font-size: 0.95rem;
-      color: #666666;
-      margin-bottom: 35px;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 15px;
-    }
-
-    .article-content h3 {
-      font-size: 1.7rem;
-      font-weight: 700;
-      margin-top: 40px;
-      margin-bottom: 15px;
-      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
-      color: #111111;
-      clear: both;
-    }
-
-    .article-content p {
-      font-size: 1.05rem;
-      color: #333333;
-      margin-bottom: 22px;
-    }
-
-    .article-content em, .article-content i {
-      font-style: italic;
-    }
-
-    .article-content strong, .article-content b {
+      font-size: 1rem;
       font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
     }
 
-    .article-content a {
-      color: #0066cc;
-      text-decoration: underline;
+    .signup-form button:hover {
+      background-color: #e2e2e2;
     }
 
-    /* First Full Width Image */
-    .hero-img {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-
-    /* Floated Side Images with Text Wrapping */
-    .float-right {
-      float: right;
-      width: 42%;
-      max-width: 420px;
-      margin: 10px 0 20px 30px;
-      border-radius: 8px;
-    }
-
-    .float-left {
-      float: left;
-      width: 42%;
-      max-width: 420px;
-      margin: 10px 30px 20px 0;
-      border-radius: 8px;
-    }
-
-    .callout-quote {
-      text-align: center;
-      font-size: 1.25rem;
-      font-style: italic;
-      margin: 35px 0;
-      padding: 22px;
-      background: #f4f4f4;
-      border-radius: 8px;
-      border-left: 4px solid #222222;
-      color: #222222;
-      clear: both;
-    }
-
-    /* Responsive adjustments for mobile */
-    @media (max-width: 768px) {
-      .article-card {
-        padding: 30px 20px;
-      }
-
-      .float-right, .float-left {
-        float: none;
-        width: 100%;
-        max-width: 100%;
-        margin: 20px 0;
-      }
+    #form-status {
+      margin-top: 15px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
+
+  <header id="main-header"></header>
+
+  <main>
+    <div class="subscribe-box">
+      <h1>Subscribe to Find Inner Peace</h1>
+      <p>Want to receive emails with journaling prompts, workbooks, and information about healing workshops?</p>
+      
+      <form class="signup-form" id="email-form">
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="hidden" name="source" value="Landing Page" />
+        <button type="submit" id="submit-btn">Sign Up</button>
+      </form>
+      <div id="form-status"></div>
+    </div>
+  </main>
+
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      });
+  </script>
 
   <!-- Shared Header Placeholder -->
   <header id="main-header"></header>
@@ -275,7 +235,7 @@
       <div class="article-meta">Published April 19, 2025 • Written by Eliana Camargo</div>
 
       <div class="article-content">
-      <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/954c0775-d4ee-46e2-b87c-d928d836f4b3/Photoshop+2.jpg" alt="Adderall Ruined My Life Banner" class="hero-image">
+     <img src="images/Adderall-Ruined-My-Life.jpg" alt="Adderall Ruined My Life Banner" class="hero-image" style="max-width: 550px; width: 100%; display: block; margin: 0 auto 25px auto;">
         <p><strong>Adderall ruined my life.</strong></p>
         <p>Usually when people say that it’s because they got addicted and started taking higher and higher doses to get high, but that’s not what happened to me. I only ever took my very low prescribed dose, exactly as directed by my doctor, and it temporarily <em>disabled</em> me. And this is that story. Disclaimer: I don’t think this will happen to most people, and I know some people swear by Adderall improving their quality of life. So I’m not here to fear monger! I’m just telling my story and educate people about a possible consequence of taking strong stimulants.</p>
 
