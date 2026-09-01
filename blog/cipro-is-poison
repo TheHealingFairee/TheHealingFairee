@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIPRO IS POISON | The Healing Fairee</title>
+  <style>
+    /* Custom Font Setup */
+    @font-face {
+      font-family: 'Valley Sans';
+      src: url('../Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('../Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype'),
+           url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('../beach.jpg') no-repeat center center fixed,
+                  url('beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #222222;
+    }
+
+    /* Shared Header Layout */
+    header#main-header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      background: transparent;
+    }
+
+    .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      margin-right: auto;
+    }
+
+    .main-nav {
+      display: flex !important;
+      align-items: center;
+      gap: 15px;
+      margin-left: auto;
+    }
+
+    /* Transparent Black Nav Buttons */
+    .nav-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-btn:hover {
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #ffffff;
+    }
+
+    /* Dropdown Styling */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 12px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a {
+      color: #ffffff;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Main Container - Extra Wide, Solid White Box */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      width: 100%;
+    }
+
+    .article-card {
+      background-color: #ffffff;
+      color: #222222;
+      padding: 55px 65px;
+      border-radius: 12px;
+      max-width: 1200px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      line-height: 1.8;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #555555;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #000000;
+    }
+
+    .article-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      color: #111111;
+      line-height: 1.25;
+    }
+
+    .article-meta {
+      font-size: 0.95rem;
+      color: #666666;
+      margin-bottom: 35px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
+    }
+
+    .article-content h4 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+      color: #111111;
+      clear: both;
+    }
+
+    .article-content p {
+      font-size: 1.05rem;
+      color: #333333;
+      margin-bottom: 22px;
+    }
+
+    .article-content ul {
+      margin-bottom: 25px;
+      padding-left: 25px;
+    }
+
+    .article-content li {
+      font-size: 1.05rem;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #111111;
+      padding-left: 20px;
+      margin: 30px 0;
+      font-size: 1.15rem;
+      color: #444444;
+      background-color: #f9f9f9;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .article-content strong, .article-content b {
+      font-weight: bold;
+    }
+
+    .article-content a {
+      color: #0066cc;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    /* Embedded Video and Image Wrappers */
+    .img-center, .img-left, .img-right {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .img-left {
+      float: left;
+      margin-right: 25px;
+      max-width: 50%;
+    }
+
+    .img-right {
+      float: right;
+      margin-left: 25px;
+      max-width: 45%;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      border-radius: 8px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      clear: both;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .tiktok-embed-container {
+      max-width: 340px;
+      margin: 20px auto;
+      clear: both;
+    }
+
+    .sources-list {
+      font-size: 0.9rem;
+      color: #555555;
+    }
+
+    .sources-list p {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    /* Clearfix for floated images */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+      .article-card {
+        padding: 30px 20px;
+      }
+
+      .img-left, .img-right {
+        float: none;
+        max-width: 100%;
+        margin: 15px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header Placeholder -->
+  <header id="main-header"></header>
+
+  <main>
+    <div class="article-card clearfix">
+      <a href="../blog.html" class="back-link">← Back to Blog</a>
+      
+      <h1 class="article-title">CIPRO IS POISON</h1>
+      <div class="article-meta">Published April 2, 2024 • Written by Eliana Camargo</div>
+
+      <div class="article-content">
+        <p>There’s a class of antibiotics that’s destroying peoples lives, and yet doctors keep prescribing it. And I’m not talking about how the over prescription of antibiotics causing superbugs, we all know about that. I’m talking about a specific type of antibiotic that’s side effects have caused thousands of people to rupture their tendons, become unable to walk, go blind, deaf, and experience brain damage and psychosis, all resulting in becoming permanently disabled and in constant pain for the rest of their lives! There’s a black box warning which tells doctors they shouldn’t prescribe it unless it’s a last resort, if nothing else has worked, because there are other safer antibiotics that are supposed to be used as the first treatment choice. Yet overworked doctors are unaware of the black box warning and keep prescribing it anyway! So unfortunately it’s up to us to educate ourselves to prevent these horrendous side effects from happening, because studies show there’s a <strong>1 in 5 chance you’ll be prescribed it for a minor infection</strong>. They’re called fluoroquinolones, and there’s a few different ones but they all end in floxacin. So anytime you or a loved one is prescribed an antibiotic, make sure it doesn’t end in floxacin. The most common one is Cipro, which is the brand name for ciprofloxacin, but there’s a full list of them below:</p>
+
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/e42a009a-6ab0-48aa-a705-cd4284fbcbf1/cipro+prescription.jpg" alt="Cipro Prescription" class="img-left">
+
+        <p><u>Drug // Brand Name</u></p>
+        <ul>
+          <li>Ciprofloxacin (Cipro)</li>
+          <li>Levofloxacin (Levaquin)</li>
+          <li>Moxifloxacin (Avelox)</li>
+          <li>Ofloxacin (Floxin)</li>
+          <li>Delafloxacin (Baxdela)</li>
+          <li>Gemifloxacin (Factive)</li>
+          <li>Norfloxacin (Noroxin)</li>
+        </ul>
+
+        <p>The scary thing is most drug side effects eventually go away when you stop taking the drug, but this side effect is permanent. The medical term for this is <strong>Fluoroquinolone Toxicity</strong>, but is colloquially known as being <strong>floxed</strong>, based off the antibiotics ending in “floxacin”.</p>
+
+        <h4>Why are people becoming floxed?</h4>
+        <p>Fluoroquinolone antibiotics work differently than most other antibiotics. Other’s work by targeting the bacteria’s cell wall or protein synthesis, but fluoroquinolones work by targeting the bacteria's mitochondrial DNA and preventing it from being able to replicate. It inhibits two enzymes (DNA gyrase and topoisomerase) which are responsible for DNA replication and repair, and impacts the ATP Energy process within cells. Since the DNA can’t replicate, it ends up killing the bacteria. The hypothesis for why many people end up having such serious side effects is it’s not only damaging the bacteria’s DNA, but our DNA as well. Studies show that people with fluoroquinolone toxicity have mutated DNA, and mitochondrial damage. And as we know, the mitochondria is the powerhouse of the cell, so when that becomes damaged it wreaks havoc on your entire body.</p>
+
+        <h4>Example of being floxed</h4>
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/aade96ab-356a-44aa-8e3e-e78950c8bf28/Mateo+Rojas.png" alt="Mateo Rojas" class="img-right">
+        
+        <p>One example of someone who was floxed is 22 year old Mateo Rojas, who was prescribed Cipro for a UTI. He’s now disabled and needs an electric wheelchair to get around, and is going blind. His symptoms began as severe tendonitis which required him to wear braces over his entire arms and legs. And one month after taking the antibiotic he was driving home and when he just turned the steering wheel, he experienced what felt like a gunshot in his wrist because his tendon ruptured. He then had to pull over and call 911 to take him to the hospital. But this wasn’t his only hospitalization as cipro also deteriorates your brain. He later suffered a psychotic episode, which is also common after being floxed, where he thought the government was reading his mind and figured they couldn’t read it if he stuck his head in the oven and melted his brain. Luckily his roommate stopped him and took him to the hospital before he could hurt himself. He also suffered severe memory loss for a month, and what he calls “word salad” which made it difficult for people to understand what he was saying. This all happened in 2018 and to this day he still is disabled, as the tendon damage and muscle atrophy is permanent. He has to use a shower chair to wash himself, and needs special hooks to help him dress himself. And has a completely reduced quality of life.</p>
+
+        <div class="tiktok-embed-container">
+          <iframe class="embedly-embed" src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.tiktok.com%2Fembed%2Fv2%2F7345228950253243694&display_name=tiktok&url=https%3A%2F%2Fwww.tiktok.com%2F%40taliasmith2021%2Fvideo%2F7345228950253243694%3Flang%3Den&image=https%3A%2F%2Fp16-sign.tiktokcdn-us.com%2Fobj%2Ftos-useast5-p-0068-tx%2Fec77c103b1bf4d218306ac42b54794d4_1710194414%3Fx-expires%3D1712203200%26x-signature%3DnErTwGvfb%252BBz8K7AuLuxWPg3m84%253D&key=c6502efcb3c84824bc6c1f27d683be13&type=text%2Fhtml&schema=tiktok" width="340" height="700" scrolling="no" title="tiktok embed" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe>
+        </div>
+
+        <p>Another example is Talia Smith, who was also prescribed Cipro for a UTI. Watch her video above. And they’re not the only one whos experienced these horrific side effects. Thousands of people have been floxed, and you can read plenty of their stories online as they all but scream from the top of their lungs that this illegal prescribing of fluoroquinolones needs to stop! And as they plead that more research needs to be done on finding a cure.</p>
+
+        <h4>Statistics</h4>
+        <p>It’s unfortunately too common that doctors prescribe cipro when they shouldn’t. A 2018 study showed that in America 20% of all fluoroquinolone prescriptions were prescribed for conditions outside protocol. 40% of the time that someone has a UTI they’re prescribed a fluoroquinolone. That means 6.3 Million fluoroquinolone prescriptions are written a year for UTIs, 6.3 million when they are other safer antibiotics that according to protocol should be used first. And even scarier is 5% of adult ambulatory fluoroquinolone prescriptions were prescribed for issues that medically don’t require antibiotics at all. 5% didn’t even need antibiotics in the first place.</p>
+
+        <blockquote>
+          <p><strong>A black box warning is the last step before a drug is taken off the market completely, and it advises that they should only be used as a last resort when other alternatives won’t due.</strong></p>
+        </blockquote>
+
+        <p>Doctors are supposed to weigh the risk of prescribing the drug vs not, using the black box warning as guidance. Yet doctors often times overlook these warnings, because they’re not up to date with the latest studies or aren’t aware of how severe the side effects are, and prescribe them anyway. A 2005 study showed that up to 49% of doctors act out of compliance with black box warnings. And when a drug contains a black box warning they’re also legally required to warn you about the side effects, yet millions of people are prescribed fluoroquinolones without ever being told about the side effects from their doctor. The vast majority of doctors are completely ignorant about the horrific and long-lasting side effects of fluoroquinolones, and definitely don’t know how to help their patients once they’ve been floxed.</p>
+
+        <p>My own brother was prescribed Cipro when he had a stomach bug that resulted in lasting IBS. He started taking probiotics but kept getting worse, so he went to the doctor and they prescribed him an antibiotic, which in the long run usually makes IBS worse, so already a dumb idea. I knew about fluoroquinolone toxicity so I asked him what he was prescribed and low and behold it was Cipro. I immediately told him he couldn’t take it and instead should just stop taking such high doses of his probiotics, because too much of a good thing can be bad, and guess what! He got better. His doctor wanted to flox him when I simply told him to stop taking probiotics and potentially saved his life. And recently I saw that one of my favorite YouTubers Shelby Church was prescribed Levaquin for a sinus infection, but she googled the antibiotic and stopped taking it after she learned about the horrible side effects. And neither of them were told about the black box warning. They were both lucky they stopped taking it, but not everyone is.</p>
+
+        <h4>Common side effects</h4>
+        <p>For those who do take it, the most common toxicity side effect is tendon damage, which occurs in about 2% of cases. There’s a 1 in 55 chance if you take cipro that you’ll experience some kind of tendon damage. Those are crazy high odds! But fluoroquinolone toxicity attacks much more than just your tendons, it affects the DNA in every single cell of your body. It ends up poisoning your muscle, bones, fascia, nerves, collagen, cartilage, everything! This happens because fluoroquinolones cause epigenetic changes to our DNA which results in stopping the production of many enzymes that keep us together, like proline which is a building block for our tendons, and collagen, which is the protein that essentially holds us together. Collagen isn’t just found in youthful skin, it provides structure for almost everything in our body, including the cornea of our eyes. Speaking of, people who take this antibiotic are 5 times more likely to experience retinal detachment, which is why many patients who are floxed go blind. Your brain is another organ that experiences side effects as it can cause psychosis, and severe memory problems. And even your nervous system is affected too which can cause burning, numbness, and weakness all over your body.</p>
+
+        <img src="https://images.squarespace-cdn.com/content/v1/602c6569ec85e77f6c4586d6/060615b6-3007-452f-b87e-d01aaa276212/Skull+pill.png" alt="Pills in the shape of skulls" class="img-left">
+
+        <p>It’s also important to note that the effect is of taking this antibiotic are cumulative! This isn’t an allergic reaction type side effect where only some people will be affected. Fluoroquinolones poison the body, and depending on your own body’s resilience, it’s a matter of quantity when the DNA damage becomes severe enough that it causes systemic effects. Many people are prescribed cipro once and are totally fine, and then later down the line are prescribed it again for something else and then are floxed and become disabled. It also often times takes a couple weeks after finishing the antibiotic before the side effects occur. It seems that different people have different thresholds, but once enough builds up in your system and damages enough of your DNA you'll experience what many floxies describe as “a bomb went off in my body” type effect. And for some people this happens after only 1 pill. Why it affects some people sooner than others is uncertain, but the takeaway is it’s not worth the risk. As the blackbox states fluoroquinolones should only be prescribed as a last resort, if you’re allergic to all other antibiotics or they haven’t worked, and only for conditions that are serious or life threatening like anthrax or the bubonic plague (which yes does still exist). Not for things like sinus infections or UTIs, which is debatable if you should even be prescribed antibiotics for them in the first place when our immune system is naturally capable of handling on its own given the time to do so. Doctors are risking peoples lives for things that your body could have fought off on its own, as it’s commonly talked about that all antibiotics overprescribed in the first place.</p>
+
+        <p>So anytime you or a loved one is prescribed an antibiotic, please check the label and make sure it doesn’t end in floxacin, or go by the common brand names Cipro, Levaquin, or Avelox. If it is, don’t take it, and ask your doctor for a non-fluoroquinolone antibiotic if possible, and then educate them about the side effects and black box warning! And from the bottom of my heart I ask you either share this blog with the people you love or just tell them about what you learned. Because after reading the stories of multiple floxies this topic has really touched my heart and I pray that this information will help save at least one person’s life and prevent people from unnecessarily becoming disabled!</p>
+
+        <p><strong>Watch the video version on this topic:</strong></p>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/rGGd-Qi80OE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <div class="sources-list">
+          <p><u>Sources:</u></p>
+          <p><a href="https://www.mdpi.com/2673-4087/2/3/17" target="_blank">https://www.mdpi.com/2673-4087/2/3/17</a></p>
+          <p><a href="https://pubmed.ncbi.nlm.nih.gov/37699580/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37699580/</a></p>
+          <p><a href="https://pubmed.ncbi.nlm.nih.gov/22474205/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22474205/</a></p>
+          <p><a href="https://jamanetwork.com/journals/jama/fullarticle/1148331" target="_blank">https://jamanetwork.com/journals/jama/fullarticle/1148331</a></p>
+          <p><a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/019537s086lbl.pdf" target="_blank">https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/019537s086lbl.pdf</a></p>
+          <p><a href="https://www.drugwatch.com/beyond-side-effects/floxed-by-cipro-at-22-a-bomb-went-off-in-my-body/" target="_blank">https://www.drugwatch.com/beyond-side-effects/floxed-by-cipro-at-22-a-bomb-went-off-in-my-body/</a></p>
+          <p><a href="https://www.aafp.org/afp/2010/0201/p298.html" target="_blank">https://www.aafp.org/afp/2010/0201/p298.html</a></p>
+          <p><a href="https://journals.sagepub.com/doi/pdf/10.1191/096032799678840237" target="_blank">https://journals.sagepub.com/doi/pdf/10.1191/096032799678840237</a></p>
+          <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6648947/" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6648947/</a></p>
+          <p>Cover image credit: Eliot J. Schechter/Getty Image</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script: Fetch Header Links -->
+  <script>
+    fetch('../nav.html?v=1')
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.text();
+      })
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data;
+      })
+      .catch(() => {
+        fetch('nav.html?v=1')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('main-header').innerHTML = data;
+          });
+      });
+  </script>
+
+</body>
+</html>
