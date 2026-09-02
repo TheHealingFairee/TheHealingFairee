@@ -1,164 +1,354 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Budget Spreadsheet — The Healing Fairee</title>
+<!DOCTYPE html> <html lang="en"> <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Free Budget Spreadsheet — The Healing Fairee</title>
 
-  <style>
+ <style> /* Opens internal CSS block for visual styling */
+    /* Custom Font Setup - Loads local 'Valley Sans' font files for headings/branding */
     @font-face {
-      font-family: 'Valley Sans';
-      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype');
-      font-weight: 100 900;
-      font-style: normal;
+      font-family: 'Valley Sans'; /* Assigns a custom name to reference this font in CSS */
+      src: url('Valley_Sans%20font/ValleySans-VariableFont_wght.ttf') format('truetype'), /* Primary file path */
+           url('Valley_Sans font/ValleySans-VariableFont_wght.ttf') format('truetype'); /* Fallback file path */
+      font-weight: 100 900; /* Supports light to bold font weights */
+      font-style: normal; /* Normal font style */
     }
 
+    /* Universal Reset - Applies default sizing rules to every element (* selector) */
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box; /* Includes padding and borders in element total width/height calculation */
+      margin: 0; /* Removes default browser margin spacing */
+      padding: 0; /* Removes default browser padding spacing */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default body font fallback stack */
     }
 
+    /* Main Page Body Background & Flex Layout */
     body {
-      background: url('/TheHealingFairee/images/beach.jpg') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #ffffff;
+      background: url('/TheHealingFairee/images/attachment-styles-soulmates-background.jpg') no-repeat center center fixed; /* Fixed full-screen background image */
+      background-size: cover; /* Scales image to fill entire screen without stretching */
+      min-height: 100vh; /* Forces page body to take up at least 100% of screen height */
+      display: flex; /* Enables flexbox layout mode */
+      flex-direction: column; /* Stacks header, main content, and modals top-to-bottom */
+      align-items: center; /* Centers all child elements horizontally */
+      color: #ffffff; /* Sets default page text color to pure white */
     }
 
+    /* Shared Navigation Header Container */
     header#main-header {
-      width: 100%;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      width: 100%; /* Stretches header full-width */
+      padding: 20px 40px; /* Internal spacing around header links */
+      display: flex !important; /* Activates flexbox alignment for logo and nav */
+      flex-direction: row !important; /* Places logo and menu links side-by-side */
+      justify-content: space-between !important; /* Pushes logo far left and nav links far right */
+      align-items: center !important; /* Vertically centers header items */
+      background: transparent; /* Makes header background see-through */
     }
 
+    /* Brand Logo Text Style */
+    .logo-link {
+      font-family: 'Valley Sans', 'Segoe UI', sans-serif; /* Uses custom brand font */
+      font-size: 2.2rem; /* Logo text size */
+      font-weight: 600; /* Semi-bold weight */
+      color: #ffffff; /* White logo color */
+      text-decoration: none; /* Removes underline from link */
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Drop shadow behind text for readability over background */
+      margin-right: auto; /* Pushes logo to the left side */
+    }
+
+    /* Main Navigation Links Wrapper */
+    .main-nav {
+      display: flex !important; /* Arranges menu buttons horizontally */
+      align-items: center; /* Vertically aligns buttons */
+      gap: 15px; /* Spacing between navigation buttons */
+      margin-left: auto; /* Pushes nav bar to the right side */
+    }
+
+    /* Transparent Black Nav Buttons */
+    .nav-btn {
+      color: #ffffff; /* White link text */
+      text-decoration: none; /* Removes underline */
+      font-size: 1rem; /* Text size */
+      font-weight: 600; /* Semi-bold */
+      padding: 8px 18px; /* Internal button padding */
+      border-radius: 20px; /* Rounded pill-shaped corners */
+      background: rgba(0, 0, 0, 0.4); /* 40% translucent black background */
+      backdrop-filter: blur(4px); /* Blurs image behind button for glassmorphism effect */
+      transition: all 0.3s ease; /* Smooth hover transition effect */
+      display: inline-block; /* Proper button layout box */
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+    }
+
+    /* Nav Button Hover State */
+    .nav-btn:hover {
+      background-color: rgba(0, 0, 0, 0.75); /* Darkens button to 75% black on mouse hover */
+      color: #ffffff; /* Ensures text stays white on hover */
+    }
+
+    /* Dropdown Menu Container */
+    .dropdown {
+      position: relative; /* Keeps dropdown content positioned relative to this button */
+      display: inline-block; /* Keeps dropdown aligned inline with other nav buttons */
+    }
+
+    /* Invisible hover bridge to prevent dropdown from closing when moving mouse down */
+    .dropdown::after {
+      content: ''; /* Empty pseudo-element */
+      position: absolute; /* Floating overlay */
+      top: 100%; /* Positions bridge right below parent button */
+      left: 0;
+      width: 100%;
+      height: 12px; /* Invisible hover zone height */
+    }
+
+    /* Hidden Dropdown Menu Container */
+    .dropdown-content {
+      display: none; /* Hides menu by default */
+      position: absolute; /* Floats menu overlay below button */
+      right: 0; /* Aligns menu right edge with button right edge */
+      top: calc(100% + 6px); /* Positions dropdown just below button */
+      background-color: rgba(0, 0, 0, 0.85); /* 85% translucent dark background */
+      backdrop-filter: blur(6px); /* Strong background blur */
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4); /* Drop shadow around dropdown box */
+      border-radius: 8px; /* Rounded box corners */
+      overflow: hidden; /* Clips children to rounded corners */
+      z-index: 10; /* Keeps menu above main page content */
+      white-space: nowrap; /* Prevents long link names from wrapping */
+    }
+
+    /* Dropdown Menu Links */
+    .dropdown-content a {
+      color: #ffffff; /* White link text */
+      padding: 12px 20px; /* Internal link spacing */
+      text-decoration: none; /* Removes underline */
+      display: block; /* Stacks links vertically inside dropdown */
+      font-size: 0.95rem; /* Text size */
+      font-weight: 500;
+      transition: background-color 0.2s; /* Smooth background hover effect */
+    }
+
+    /* Dropdown Link Hover State */
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* Light translucent hover highlight */
+    }
+
+    /* Shows Dropdown Menu on Mouse Hover */
+    .dropdown:hover .dropdown-content {
+      display: block; /* Makes hidden menu visible when hovering over parent button */
+    }
+
+    /* Main Page Content Wrapper */
     main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
+      flex: 1; /* Takes up all available vertical screen space to push footer down */
+      display: flex; /* Enables flexbox layout */
+      justify-content: center; /* Centers card horizontally */
+      align-items: center; /* Centers card vertically */
+      padding: 20px; /* Page outer padding */
+      width: 100%; /* Full screen width wrapper */
+    }
+
+    /* Center Content Container */
+    .content-container {
+      text-align: center; /* Centers all text inside card */
+      max-width: 650px; /* Restricts maximum width of text card */
+      width: 100%; /* Responsive scaling on mobile */
+      padding: 20px; /* Internal spacing */
+    }
+
+    /* Main Headline Title Style */
+    .content-container h1 {
+      font-size: 2.2rem; /* Large headline font size */
+      margin-bottom: 20px; /* Space below headline */
+      line-height: 1.3; /* Line spacing height */
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); /* Text shadow for contrast against background */
+    }
+
+    /* Paragraph Text Style */
+    .content-container p {
+      font-size: 1.05rem; /* Paragraph text size */
+      line-height: 1.6; /* Comfortable reading line height */
+      margin-bottom: 30px; /* Space below paragraph */
+      color: #ffffff; /* Pure white text */
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Text shadow for legibility */
+    }
+
+    /* Oval CTA Button Style */
+    .oval-btn {
+      padding: 16px 40px; /* Button padding */
+      border: none; /* Removes default browser button border */
+      border-radius: 50px; /* Fully rounded pill shape */
+      background-color: #ffffff; /* White background */
+      color: #222222; /* Dark gray text */
+      font-size: 1.1rem; /* Button text size */
+      font-weight: bold; /* Bold text weight */
+      cursor: pointer; /* Displays hand pointer cursor on hover */
+      transition: transform 0.2s, background-color 0.2s; /* Smooth scale and color hover animation */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Drop shadow under button */
+    }
+
+    /* Oval Button Hover State */
+    .oval-btn:hover {
+      background-color: #f0f0f0; /* Off-white hover shade */
+      transform: scale(1.03); /* Slightly enlarges button on hover */
+    }
+
+    /* Popup Modal Fullscreen Overlay Background */
+    .modal-overlay {
+      position: fixed; /* Fixed overlay relative to screen window */
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* 60% dark translucent backdrop */
+      display: none; /* Hidden by default until opened via JavaScript */
+      justify-content: center; /* Centers popup box horizontally */
+      align-items: center; /* Centers popup box vertically */
+      padding: 20px;
+      z-index: 1000; /* Keeps popup above all other page content */
     }
 
-    .form-card {
-      background-color: #ffffff;
-      color: #2c2c2c;
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 550px;
-      width: 100%;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-      text-align: center;
+    /* Popup Modal White Box */
+    .modal-box {
+      background: #ffffff; /* Solid white box */
+      color: #222222; /* Dark text inside box */
+      padding: 35px 30px; /* Internal box padding */
+      border-radius: 12px; /* Rounded box corners */
+      max-width: 450px; /* Box max width */
+      width: 100%; /* Mobile scaling width */
+      text-align: center; /* Centered text */
+      position: relative; /* Relative anchor for absolute close button positioning */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Strong drop shadow around popup */
     }
 
-    .form-title {
-      font-size: 2.2rem;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-      font-family: 'Valley Sans', 'Segoe UI', sans-serif;
+    /* Modal Close 'X' Button Style */
+    .close-btn {
+      position: absolute; /* Positions button relative to modal box top-right */
+      top: 12px;
+      right: 18px;
+      font-size: 1.5rem; /* Large 'X' icon size */
+      cursor: pointer; /* Pointer cursor on hover */
+      color: #666; /* Gray icon color */
     }
 
-    .form-description {
-      font-size: 1.05rem;
-      color: #555555;
-      margin-bottom: 25px;
-      line-height: 1.5;
+    /* Modal Header Title */
+    .modal-box h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #111;
     }
 
-    .optin-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    /* Form Inputs Vertical Layout */
+    .modal-form {
+      display: flex; /* Flexbox form layout */
+      flex-direction: column; /* Stacks input and button vertically */
+      gap: 15px; /* Spacing between input field and submit button */
     }
 
-    .input-field {
-      padding: 14px 18px;
+    /* Email Input Field Style */
+    .modal-form input[type="email"] {
+      padding: 14px; /* Internal input padding */
+      border: 1px solid #ccc; /* Light gray outline */
+      border-radius: 6px; /* Slightly rounded corners */
       font-size: 1rem;
-      border: 1px solid #cccccc;
-      border-radius: 8px;
-      outline: none;
-      transition: border-color 0.2s;
+      outline: none; /* Removes blue outline on focus */
     }
 
-    .input-field:focus {
-      border-color: #b75aff;
-    }
-
-    .submit-btn {
-      background-color: #b75aff;
-      color: #ffffff;
-      font-size: 1.05rem;
-      font-weight: 600;
+    /* Form Submit Button Style */
+    .modal-form button {
       padding: 14px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
+      background-color: #222222; /* Dark gray button */
+      color: #ffffff; /* White text */
+      font-size: 1rem;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.2s;
     }
 
-    .submit-btn:hover {
-      background-color: #8c26d4;
+    /* Submit Button Hover State */
+    .modal-form button:hover {
+      background-color: #444444; /* Lighter gray hover shade */
     }
-
-    .status-msg {
-      margin-top: 15px;
-      font-size: 0.95rem;
-      color: #666666;
-    }
-  </style>
+  </style> /* Closes CSS block */
 </head>
-<body>
-
-  <header id="main-header"></header>
+<body> <header id="main-header"></header>
 
   <main>
-    <div class="form-card">
-      <h1 class="form-title">Free Budget Spreadsheet</h1>
-      <p class="form-description">Enter your email below to get instant access to the Google Sheets budget template.</p>
 
-      <form id="optin-form" class="optin-form">
-        <input type="email" id="email" class="input-field" placeholder="Enter your email address" required>
-        <button type="submit" id="submit-btn" class="submit-btn">Get the Template</button>
-      </form>
-      <div id="status-msg" class="status-msg"></div>
+  <main>
+    <div class=" content-container ">
+      <h1>Free Budget Spreadsheet</h1>
+<p> I made this free budget spreadsheet for anyone to use, because I think learning how to get a handle of your money should always be free! Instructions for how to use it are found within the spreadsheet. Here’s to financial freedom 😊
+<button class="oval-btn" id="open-modal-btn">Download the Google Sheets Template</button>
     </div>
+
   </main>
 
+  <div class="modal-overlay" id="email-modal">
+    <div class="modal-box">
+      <span class="close-btn" id="close-modal-btn">&times;</span>
+      <h2>Yes, send me the free spreadsheet!</h2> <form class="modal-form" id="workbook-form">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Enter your email to receive your download" 
+          required 
+        />
+        <input type="hidden" name="source" value="Attachment Style Workbook" />
+        <button type="submit" id="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
   <script>
-    // Header Loader
-    fetch('nav.html?v=1')
-      .then(res => res.text())
-      .then(data => { document.getElementById('main-header').innerHTML = data; });
+    fetch('nav.html') // Requests content from external nav.html file
+      .then(res => res.text()) // Converts server response to raw HTML text
+      .then(data => {
+        document.getElementById('main-header').innerHTML = data; // Injects nav HTML directly inside <header id="main-header">
+      });
+  </script>
 
     // Form Submission & Redirect Logic
+
+  <script>
+    // Google Apps Script Web App URL endpoint that handles logging emails into your Google Sheet
+
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzZpYCmbm8HMrDWLxmPxR61w7UIcCatZX8m4QJHPRXul2dm0ru-qG4NvkD5gasDJz412g/exec';
-    const form = document.getElementById('optin-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const statusMsg = document.getElementById('status-msg');
 
+  // Grabs DOM elements by ID for manipulation
+    const modal = document.getElementById('email-modal'); // Overlay backdrop
+    const openBtn = document.getElementById('open-modal-btn'); // Download button on page
+    const closeBtn = document.getElementById('close-modal-btn'); // 'X' button inside modal
+    const form = document.getElementById('workbook-form'); // Form element
+    const submitBtn = document.getElementById('submit-btn'); // Form submit button
+
+    // Event Listener: Opens modal popup on "Download my PDF" button click
+    openBtn.addEventListener('click', () => modal.style.display = 'flex');
+    
+    // Event Listener: Closes modal popup on 'X' button click
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    
+    // Event Listener: Closes modal if user clicks anywhere outside the white box onto the dark background
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // Event Listener: Form Submission Handler
     form.addEventListener('submit', e => {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Submitting...';
+      e.preventDefault(); // Prevents default browser page refresh on form submit
+      submitBtn.disabled = true; // Disables submit button to prevent double clicks
+      submitBtn.innerText = 'Submitting...'; // Changes button text to give visual feedback
 
-      const emailVal = document.getElementById('email').value;
-
-      fetch(scriptURL, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  body: new URLSearchParams({
-    'email': emailVal,
-    'source': 'Budget Spreadsheet'
-  })
+      const formData = new FormData(form); // Gathers all form input values
+      const urlEncoded = new URLSearchParams(formData).toString(); // Formats form values into URL parameters (email=...&source=...)
+      // Asynchronously sends form data to Google Apps Script
+      fetch(SCRIPT_URL, {
+        method: 'POST', // Sends a POST data request
+        mode: 'no-cors', // Bypasses cross-origin CORS security restrictions for Google Script redirects
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', // Standard form URL-encoded header },
+        body: urlEncoded // Attaches the encoded email & source data
       })
       .then(() => {
+
         // Redirect to download page after successfully recording email
         window.location.href = 'budget-spreadsheet-download.html';
       })
