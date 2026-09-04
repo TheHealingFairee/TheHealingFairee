@@ -200,16 +200,16 @@
       margin-bottom: 15px;
     }
 
-    /* Contact Section & Centered Equal Grid */
+    /* Contact Section & Single-Column Stacked Cards */
     .contact-section {
       width: 100%;
-      text-align: center; /* Centers the Contact Me heading */
+      text-align: center;
     }
 
     .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Equal sized cards */
-      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 16px;
       margin-top: 25px;
       width: 100%;
@@ -220,7 +220,9 @@
       align-items: center;
       gap: 15px;
       padding: 16px 20px;
-      height: 72px; /* Fixed equal height for all cards */
+      height: 72px;
+      max-width: 500px;
+      width: 100%;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -233,7 +235,7 @@
     .contact-card:hover {
       background: rgba(255, 255, 255, 0.22);
       transform: translateY(-2px);
-      border-color: #db8fff;
+      border-color: #c8f7c6;
       box-shadow: 0 6px 20px rgba(183, 90, 255, 0.25);
     }
 
@@ -284,8 +286,8 @@
         max-width: 280px;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .contact-card {
+        max-width: 100%;
       }
     }
   </style>
