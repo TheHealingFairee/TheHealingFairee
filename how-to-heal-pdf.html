@@ -132,13 +132,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 20px 20px 60px 20px;
       width: 100%;
     }
 
     .content-container {
       text-align: center;
-      max-width: 650px;
+      max-width: 900px; /* Expanded max-width so side-by-side videos have enough room */
       width: 100%;
       padding: 20px;
     }
@@ -174,6 +174,42 @@
     .oval-btn:hover {
       background-color: #f0f0f0;
       transform: scale(1.03);
+    }
+
+    /* Divider Line */
+    hr.divider {
+      border: none;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.3);
+      margin: 40px auto 30px auto;
+      width: 100%;
+    }
+
+    /* Video Grid & Container Styling */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* Modal Styling */
@@ -258,6 +294,18 @@
       <p>I made a free workbook with all the information you need about attachment styles, why they form, and how to heal them! If you want to bring peace back into your relationships and stop suffering from anxiety, feeling unloved, unheard, or suffocated, then your new life is just one click away!</p>
       
       <button class="oval-btn" id="open-modal-btn">Download my PDF</button>
+
+      <hr class="divider">
+      <p style="text-align: center; margin-bottom: 20px;">Watch the videos that accompany this workbook:</p>
+
+      <div class="video-grid">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/VnsR8I8xNOk" title="Attachment Styles 101 - The cause of your relationship anxiety/irritation Part 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/Wclba_vP2JA" title="How to Heal Attachment Styles & Become Securely Attached - PART 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -327,21 +375,5 @@
     });
   </script>
 
-
-<hr class="divider">
-        
-        <p style="text-align: center;">Watch the videos that accompany this workbook: </p>
-
-
-      <div class="video-grid">
-          <div class="video-container">
-            <iframe src="https://youtu.be/VnsR8I8xNOk?si=CNP8Ttb9ZAwUe0LR" title="Attachment Styles 101 - The cause of your relationship anxiety/irritation Part 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <div class="video-container">
-            <iframe src="https://youtu.be/Wclba_vP2JA?si=rN6I8zBPnIz101iX" title="How to Heal Attachment Styles & Become Securely Attached - PART 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-
-  
 </body>
 </html>
