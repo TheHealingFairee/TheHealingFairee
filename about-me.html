@@ -200,14 +200,16 @@
       margin-bottom: 15px;
     }
 
-    /* Contact Section & Grid Layout */
+    /* Contact Section & Centered Equal Grid */
     .contact-section {
       width: 100%;
+      text-align: center; /* Centers the Contact Me heading */
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Equal sized cards */
+      justify-content: center;
       gap: 16px;
       margin-top: 25px;
       width: 100%;
@@ -217,7 +219,8 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      padding: 14px 20px;
+      padding: 16px 20px;
+      height: 72px; /* Fixed equal height for all cards */
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -225,10 +228,6 @@
       text-decoration: none;
       color: #ffffff;
       transition: all 0.25s ease;
-    }
-
-    .contact-card.full-width {
-      grid-column: 1 / -1;
     }
 
     .contact-card:hover {
@@ -249,20 +248,27 @@
       display: flex;
       flex-direction: column;
       text-align: left;
+      overflow: hidden;
     }
 
     .contact-label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #dddddd;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .contact-handle {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       font-weight: 600;
       color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* Mobile Responsive Layout */
@@ -278,15 +284,14 @@
         max-width: 280px;
       }
 
-      .contact-card.full-width {
-        grid-column: auto;
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Shared Header Placeholder -->
   <header id="main-header"></header>
 
   <main>
@@ -305,7 +310,6 @@
       
       <p>I'm a big believer that healing should never be behind a paywall, and so I will always provide resources on how to heal for free. However, if you want to work directly with me in workshops, I may offer them in the future :) Subscribe to my email list if you'd like to be the first to learn about those! The workshops will cost a small fee, but all of the information I will be guiding you through can be found for free on my YouTube channel. They will just be for those who want their hand held along the way, if that's something that calls out to you!</p>
 
-      <!-- Contact Section with Social Logos -->
       <div class="contact-section">
         <h2>Contact Me</h2>
         <div class="contact-grid">
@@ -342,7 +346,7 @@
             </div>
           </a>
 
-          <a href="https://www.youtube.com/@LibraLoveLounge" target="_blank" rel="noopener" class="contact-card full-width">
+          <a href="https://www.youtube.com/@LibraLoveLounge" target="_blank" rel="noopener" class="contact-card">
             <img src="/TheHealingFairee/images/YouTube%20Logo%20PNG.png" alt="YouTube Logo" class="contact-icon">
             <div class="contact-info">
               <span class="contact-label">(Retired) Relationship Advice Channel</span>
@@ -362,7 +366,6 @@
     </div>
   </main>
 
-  <!-- Script: Fetch Header Links -->
   <script>
     fetch('nav.html?v=1')
       .then(res => res.text())
