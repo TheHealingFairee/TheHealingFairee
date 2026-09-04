@@ -22,25 +22,25 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-body {
-  background: url('../images/beach.jpg') no-repeat center center fixed,
-              url('/TheHealingFairee/images/beach.jpg') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #222222;
-}
+    body {
+      background: url('../images/beach.jpg') no-repeat center center fixed,
+                  url('/TheHealingFairee/images/beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #222222;
+    }
 
     /* Thin line style*/
-hr.divider {
-  border: none;
-  height: 1px;
-  background-color: #e0e0e0; 
-  margin: 40px auto;  /* Spacing above and below the line */
-  width: 100%; /* Stretches across the container */
-}
+    hr.divider {
+      border: none;
+      height: 1px;
+      background-color: #e0e0e0; 
+      margin: 40px auto 30px auto; /* Spacing above and below the line */
+      width: 100%; /* Stretches across the container */
+    }
 
     /* Shared Header Layout */
     header#main-header {
@@ -273,7 +273,6 @@ hr.divider {
 </head>
 <body>
 
-  <!-- Shared Header Placeholder -->
   <header id="main-header"></header>
 
   <main>
@@ -375,27 +374,26 @@ hr.divider {
 
         <h3>Conclusion</h3>
         <p>As time goes on and you balance all of the pillars of your health, you'll look back and see just how far you've come! I remember when I was hardly able to do half of a 20 minute yoga video, when I can now do advanced yoga for 75 minutes. I’ve had periods of my life where I was hardly able to walk for 10 minutes, but now I can run for multiple miles. I'm living proof that it is possible to get your life back despite having fibromyalgia and CFS, and you are no exception! It may be a long journey and there will be ups and downs, but you will be capable of healing your body. Know it to be true and it will manifest! Good luck ❤️</p>
+
+        <hr class="divider">
+
+        <p style="text-align: center;">Watch the video version of this topic:</p>
+
+        <div style="max-width: 560px; margin: 20px auto 30px auto;">
+          <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
+            <iframe src="https://www.youtube.com/embed/XgjeC6Atpro" 
+              title="How to exercise with Fibromyalgia and CFS" 
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
 
-  <hr class="divider">
-
-<p style="text-align: center;">Watch the video version of this topic:</p>
-
-<!-- Centered wrapper with auto-scaling 16:9 aspect ratio -->
-<div style="max-width: 560px; margin: 20px auto 30px auto;">
-  <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
-    <iframe src="https://youtu.be/XgjeC6Atpro?si=lQ4IrzxTzFtrR3lz" 
-      title="How to exercise with Fibromyalgia and CFS" 
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
-
-  <!-- Script: Fetch Header Links -->
   <script>
     fetch('../nav.html?v=1')
       .then(res => {
