@@ -116,7 +116,7 @@ hr.divider {
       box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
       border-radius: 8px;
       overflow: hidden;
-      z-index: 10;
+      z-index: 1000;
       white-space: nowrap;
     }
 
@@ -247,6 +247,49 @@ hr.divider {
         padding: 30px 20px;
       }
     }
+
+/* Shared Mobile Responsive Layout Fixes */
+    @media (max-width: 768px) {
+      header#main-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 20px !important;
+        gap: 12px;
+      }
+
+      .logo-link {
+        font-size: 1.8rem !important;
+        margin-right: 0 !important;
+        text-align: center;
+      }
+
+      .main-nav {
+        margin-left: 0 !important;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .nav-btn {
+        font-size: 0.92rem !important;
+        padding: 7px 16px !important;
+      }
+
+      /* Centers the Freebies dropdown so text isn't cut off on the left */
+      .dropdown-content {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+        min-width: 250px;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      main {
+        padding: 20px 15px !important;
+      }
+    }
+    
   </style>
 </head>
 <body>
