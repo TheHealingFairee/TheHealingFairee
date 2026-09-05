@@ -155,7 +155,7 @@
       font-size: 0.95rem;
       margin-bottom: 25px;
       line-height: 1.5;
-      color: #ffffff; /* Updated to Pure White */
+      color: #ffffff;
     }
 
     .signup-form {
@@ -174,27 +174,67 @@
       outline: none;
     }
 
-.signup-form button {
-  border: 0px solid #ffffff; 
-  width: 200px;
-  margin: 10px auto 0 auto; /* Centers the button inside the form */
-  padding: 12px 24px;
-  background-color: #9d44d4;
-  color: #ffffff;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
-}
+    .signup-form button {
+      border: 0px solid #ffffff; 
+      width: 200px;
+      margin: 10px auto 0 auto;
+      padding: 12px 24px;
+      background-color: #9d44d4;
+      color: #ffffff;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
 
-.signup-form button:hover {
-  background-color: #8220c7; /* Darker purple on hover */
-}
+    .signup-form button:hover {
+      background-color: #8220c7;
+    }
 
     #form-status {
       margin-top: 15px;
       font-size: 0.9rem;
+    }
+
+    /* Mobile Responsive Layout Fixes */
+    @media (max-width: 768px) {
+      header#main-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 20px !important;
+        gap: 15px;
+      }
+
+      .logo-link {
+        font-size: 1.8rem !important;
+        margin-right: 0 !important;
+        text-align: center;
+      }
+
+      .main-nav {
+        margin-left: 0 !important;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .nav-btn {
+        font-size: 0.85rem !important;
+        padding: 6px 14px !important;
+      }
+
+      main {
+        padding: 20px 15px !important;
+      }
+
+      .subscribe-box {
+        padding: 35px 20px;
+      }
+
+      .subscribe-box h1 {
+        font-size: 1.75rem;
+      }
     }
   </style>
 </head>
